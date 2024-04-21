@@ -1,0 +1,7 @@
+.list-page-wrapper {
+    background-image: url('patternimage2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
