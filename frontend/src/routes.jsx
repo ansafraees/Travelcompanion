@@ -1,12 +1,12 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Login from '../src/pages/LoginRegister';
-import Trip from '../src/pages/Trip'; // Import the Trip page
+import Home from '../src/pages/Home';
+import Trip from '../src/pages/Trip';
 
 export default function PageRoutes() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Trip" element={<Trip />} />
       </Routes>
     </Router>

@@ -1,14 +1,18 @@
-import {useState} from 'react';
 import { Link } from 'react-router-dom';
-function Navbar({ handlePlaceChanged,setSearchInput,searchInput}) {
-  
+import Sidebar from './sidebar';
+
+function Navbar({ handlePlaceChanged, setSearchInput, searchInput }) {
 
   const handleInputChange = (e) => {
     console.log('Search input:', e.target.value);
     setSearchInput(e.target.value);
   };
+
   return (
     <nav className="flex items-center justify-between bg-gray-800 px-4 py-3">
+      <div className="flex items-center">
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+      </div>
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <span className="font-semibold text-xl">Travel App</span>
       </div>
@@ -34,3 +38,4 @@ function Navbar({ handlePlaceChanged,setSearchInput,searchInput}) {
 }
 
 export default Navbar;
+
