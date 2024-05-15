@@ -21,7 +21,7 @@
     background-color: #f0f0f0;
   }
   .trip-page-wrapper {
-    background-image: url('D:\mapCompanion\frontend\src\assets\world-travel-map-.jpg');
+    background-image: url('src/assets/world-travel-map-.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
