@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import Map from '../components/Map';
+import { useState, useEffect } from 'react';
+import List from '../components/Tofind'
+import Map from '../components/Map'
 import Navbar from '../components/Navbar';
-import List from '../components/Tofind';
-import './home.css';
+import { getPlacesData } from '../api/app';
 
 const Home=()=>{
   const [coords, setCoords] = useState({});
@@ -10,7 +10,7 @@ const Home=()=>{
   const [places, setPlaces] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [type,setType]=useState("restaurants");
-  const [rating,setRating]=useState('')
+  const [rating,setRating]=useState('All');
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
@@ -47,9 +47,8 @@ const Home=()=>{
     }
    
   };
-/*
   useEffect(() => {
-   
+    console.log('coords,bounds',coords,bounds);
     setIsLoading(true)
     if(bounds) getPlacesData(type,bounds.sw,bounds.ne)
       .then((data) => {
@@ -61,8 +60,7 @@ const Home=()=>{
       .catch((error) => {
         console.error("Error fetching data:", error);
       })
-  },[type,coords,bounds]);
-  */
+  },[type,bounds]);
   
     return (
         <div className='h-screen w-screen'>
@@ -70,13 +68,13 @@ const Home=()=>{
                 <Navbar handlePlaceChanged={handlePlaceChanged} setSearchInput={setSearchInput} searchInput={searchInput}/>
             </div>
             <div className='mt-0.5 flex flex-row justify-between'>
-             <div className='list-page-wrapper'><List 
+              <List 
                 isLoading={isLoading}
                 places={filteredPlaces.length ? filteredPlaces : places}
                 type={type}
                 setType={setType}
                 rating={rating}
-                setRating={setRating}/></div> 
+                setRating={setRating}/>
               {coords && <Map 
                 setCoords={setCoords}
                 setBounds={setBounds}

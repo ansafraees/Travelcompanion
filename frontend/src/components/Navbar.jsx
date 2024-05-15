@@ -38,4 +38,3 @@ function Navbar({ handlePlaceChanged, setSearchInput, searchInput }) {
 }
 
 export default Navbar;
-

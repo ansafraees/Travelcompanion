@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@mui/material';
+import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip ,Rating} from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 
@@ -13,6 +13,7 @@ const PlaceCard = ({ place}) => {
       <CardContent>
         <Typography gutterBottom variant="h5">{place.name}</Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
+          <Rating name="read-only" value={Number(place.rating)} readOnly />
           <Typography component="legend">{place.num_reviews} review{place.num_reviews > 1 && 's'}</Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">

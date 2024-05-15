@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useSnackbar } from 'notistack';
 import { useContext, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import bgi from "../assets/bgi.jpg";
 import { UserContext } from '../components/UserContext';
 
@@ -11,7 +12,7 @@ const LoginRegister=()=>{
     const [registerLogin,setRegisterLogin]=useState('login')
     const {setUsername:setLoggedInUsername,setId}=useContext(UserContext)
     const { enqueueSnackbar } = useSnackbar();
-
+    const navigate=useNavigate();
     const handleSubmit=async()=>{
         try{
             const user={
@@ -24,6 +25,7 @@ const LoginRegister=()=>{
             setLoggedInUsername(username);
             setId(data.id);
             enqueueSnackbar(`${url}ed successfully`, { variant: 'success' });
+            navigate('/Home')
         }
         catch(err){
             enqueueSnackbar('Error: '+err.message, { variant:'error'})
@@ -32,7 +34,7 @@ const LoginRegister=()=>{
     }
     return(
         <div className='flex items-center h-screen bg-cover' style={{ backgroundImage:`url(${bgi})`, backgroundPosition: 'center' }}>
-          <div className='flex flex-col backdrop-blur-md border-2 border-blue-300 rounded-xl w-[400px] p-4 absolute right-12 top-1/2 transform -translate-y-1/2 bg-white'>
+          <div className='flex flex-col justify-center items-center backdrop-blur-md border-2 border-blue-300 rounded-xl w-[400px] h-[400px] p-4 absolute top-1/2 transform -translate-y-1/2 bg-white'style={{ right: '200px' }}>
 
                 <div className='my-1'>
                     <label className='text-3xl mr-4 text-black-600/75 font-serif font-extrabold'>Username</label>
