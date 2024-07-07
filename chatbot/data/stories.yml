@@ -1,0 +1,107 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_restart
+
+- story: sad path 1
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_glad
+
+- story: sad path 2
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: get weather with city
+  steps:
+  - intent: get_weather
+    entities:
+     - location: "Pattambi"
+  - action: action_weather
+  - action: action_restart
+
+- story: get weather without city
+  steps:
+  - intent: get_weather
+  - action: action_weather
+  - action: action_restart
+
+- story: ask for location path 1
+  steps:
+    - action: utter_ask_location
+    - intent: deny
+    - action: utter_get_city_name
+    - intent: inform
+      entities:
+        - location: city
+    - action: action_weather
+    - action: action_restart
+
+- story: ask for location path 2
+  steps:
+    - action: utter_ask_location
+    - intent: affirm
+    - action: action_weather
+    - action: action_restart
+
+- story: ask for weather without current location
+  steps:
+    - intent: ask_weather
+    - action: utter_ask_location_weather
+    - intent: deny
+    - action: utter_get_city_name
+    - intent: inform
+      entities:
+        - location: "city"
+    - action: action_weather
+    - action: action_restart
+
+- story: ask for weather with current location
+  steps:
+    - intent: ask_weather
+    - action: utter_ask_location
+    - intent: affirm
+    - action: action_weather
+    - action: action_restart
+
+- story: search restaurants
+  steps:
+    - intent: search_restaurants
+    - action: utter_get_restaurant_city_name
+    - intent: inform
+      entities:
+        - location
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: search attractions
+  steps:
+    - intent: search_attractions
+    - action: utter_get_attraction_details
+    - intent: inform
+      entities:
+        - location
+    - action: action_search_attractions
+    - action: action_restart
+
+- story: search hotels
+  steps:
+    - intent: search_hotels
+    - action: utter_get_hotel_details
+    - intent: inform
+      entities:
+        - location
+    - action: action_search_hotels
+    - action: action_restart

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "location",
+    "pattern": "[a-zA-Z]+"
+  }
+]

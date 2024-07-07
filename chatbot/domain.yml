@@ -1,0 +1,113 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - mood_happy
+  - bot_challenge
+  - get_weather
+  - inform
+  - glad
+  - ask_weather
+  - invalid_input
+  - search_restaurants
+  - search_attractions
+  - search_hotels
+
+
+entities:
+ - location
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: location
+
+actions:
+  - action_weather
+  - action_search_restaurants
+  - action_search_attractions
+  - action_search_hotels
+  - action_default_fallback
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+      buttons:
+        - title: "Weather Forecast"
+          payload: "/ask_weather"
+        - title: "Search for hotels"
+          payload: "/search_hotels"
+        - title: "Search for Restaurents"
+          payload: "/search_restaurents"
+        - title: "Search for Attractions"
+          payload: "/search_attractions"
+
+  utter_cheer_up:
+  - custom:
+     image: "https://i.imgur.com/c8PPgB6.jpeg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a travel assistant bot, created to assist you"
+    buttons:
+      - title: "Weather Forecast"
+        payload: "/ask_weather"
+      - title: "Search for hotels"
+        payload: "/search_hotels"
+      - title: "Search for Restaurants"
+        payload: "/search_restaurants"
+      - title: "Search for Attractions"
+        payload: "/search_attractions"
+
+  utter_ask_location_weather:
+    - text: "Do you know want to use your current location?"
+
+  utter_get_city_name:
+    - text: "Please provide the city name"
+
+  utter_None:
+    - text: "Sorry, I didn't understand that. Can you please rephrase?"
+
+  utter_default:
+    - text: "Sorry could not understand your request. Can you please rephrase?"
+  
+  utter_glad:
+    - text: "Glad to help"
+
+  utter_default_deny_response:
+    - text: "I'm not sure what you meant by 'no'. Could you please clarify your request?"
+  
+  utter_default_affirm_response:
+    - text: "I'm not sure what you meant by 'yes'. Could you please clarify your request?"
+  
+  utter_get_restaurant_city_name:
+    - text: "Can you please provide your city name"
+
+  utter_get_attraction_details:
+    - text: "can you please provide your city name"
+
+  utter_get_hotel_details:
+    - text: "can you please provide your city name"
+
+  
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

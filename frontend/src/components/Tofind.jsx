@@ -1,6 +1,5 @@
-import { useState, useEffect, createRef } from 'react';
-import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
-import PlaceCard from './PlaceCard'
+import { CircularProgress, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import PlaceCard from './PlaceCard';
 
 const List = ({places,type, setType, rating, setRating, isLoading })=>{
   
@@ -15,7 +14,7 @@ const List = ({places,type, setType, rating, setRating, isLoading })=>{
       ) : (
         <>
       <FormControl style={{minWidth: 120, marginBottom:30,margin:1}}>
-          <InputLabel id="type">Type</InputLabel>
+          <InputLabel id="type"></InputLabel>
             <Select id="type" value={type} onChange={(e) => setType(e.target.value)} style={{
             borderColor: 'black',
             borderWidth: 2,
@@ -28,7 +27,7 @@ const List = ({places,type, setType, rating, setRating, isLoading })=>{
             </Select>
           </FormControl>
           <FormControl style={{minWidth: 120, marginBottom:30,margin:1}}>
-            <InputLabel id="rating">Rating</InputLabel>
+            <InputLabel id="rating"></InputLabel>
             <Select id="rating" value={rating} onChange={(e) => setRating(e.target.value)} style={{
             borderColor: 'black',
             borderWidth: 2,

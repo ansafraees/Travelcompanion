@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from 'react';
-import { GoogleMap, LoadScript, Marker,InfoWindow} from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useEffect, useRef, useState } from 'react';
 
 import _ from 'lodash'; // lodash library
 
@@ -10,7 +10,7 @@ const Map = ({ setCoords, setBounds, coords = { lat: 0, lng: 0 }, places }) => {
 
 
   useEffect(() => {
-    setDebouncedFunction(() => _.debounce(handleBoundsChanged, 3000));
+    setDebouncedFunction(() => _.debounce(handleBoundsChanged, 6000));
   }, []);
 
   const handleLoad = (mapInstance) => {

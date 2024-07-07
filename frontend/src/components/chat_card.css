@@ -1,0 +1,68 @@
+/* chat_card.css */
+.chat-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .chat-card-container-image{
+    height: 140px;
+  }
+  
+  .scroll-button.left {
+    left: 30px;
+    font-size: 34px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 45%;
+    width:min-content;
+    transform: translateY(-50%);
+    background: rgba(54, 71, 86, 0.445);
+    border: none;
+    border-radius: 51%;
+    cursor: pointer;
+    padding: 0px;
+    z-index: 1;
+}
+  
+  .scroll-button.left:hover, .scroll-button.right:hover {
+    background-color: rgba(58, 166, 255, 0.248);
+    color: rgb(58, 166, 255);
+  }
+  .scroll-button.left:disabled, .scroll-button.right:disabled {
+    display: none;
+  }
+  .scroll-button.right {
+    font-size: 34px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 45%;
+    width:min-content;
+    transform: translateY(-50%);
+    background: rgba(54, 71, 86, 0.445);
+    border: none;
+    border-radius: 51%;
+    cursor: pointer;
+    padding: 0px;
+    z-index: 1;
+    right: 10px;
+  }
+  
+  .card {
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .css-46bh2p-MuiCardContent-root {
+    padding: 4px;
+    height: 220px;
+}
+  
+css-46bh2p-MuiCardContent-root:last-child {
+    padding-bottom: 5px;
+}

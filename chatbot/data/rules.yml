@@ -1,0 +1,53 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: action_restart
+
+- rule: Say 'glad to help' anytime the user says thanks
+  steps:
+  - intent: glad
+  - action: utter_glad
+  - action: action_restart
+
+##- rule: Say 'default' for invalid inputs
+  #steps:
+  #- intent: invalid_input
+  #- action: utter_default_message
+
+- rule: to handle unexpected deny
+  condition:
+  - active_loop: null 
+  conversation_start: true
+  steps:
+  - intent: deny
+  - action: utter_default_deny_response
+  - action: action_restart
+
+- rule: to handle unexpected affirm
+  condition:
+  - active_loop: null 
+  conversation_start: true
+  steps:
+  - intent: affirm
+  - action: utter_default_affirm_response
+  - action: action_restart
+
+- rule: to handle unexpected inform
+  condition:
+  - active_loop: null 
+  conversation_start: true
+  steps:
+  - intent: inform
+  - action: utter_default
+  - action: action_restart

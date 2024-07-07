@@ -1,0 +1,410 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: glad
+  examples: |
+    - thanks
+    - THANKS
+    - thx
+    - THANK YOU
+    - thank you
+    - thank u
+    - thnk u
+    - THNK U
+    - TK U
+    - THNK YOU
+    - thnk you
+    - thank
+    - good job
+    - gd job
+    - great job
+    - doing good
+    - very good
+    - good jb
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - bot?
+
+- intent: get_weather
+  examples: |
+      - What's the weather in [New York](location)?
+      - Tell me the weather in [London](location)
+      - How is the weather in [Paris](location)?
+      - Weather forecast for [Berlin](location)
+      - Weather in [Kochi](location)
+      - How's the weather in [Tokyo](location)?
+      - Weather forecast for [Sydney](location)
+      - What's the temperature in [Dubai](location)?
+      - Is it sunny in [Cairo](location)?
+      - How's the weather in [Moscow](location)?
+      - What's the forecast for [Rio de Janeiro](location)?
+      - What's the weather like in [Thiruvananthapuram](location)?
+      - How's the climate in [Kozhikode](location)?
+      - Weather in [Alappuzha](location)
+      - Weather forecast for [Thrissur](location)
+      - Is it hot in [Malappuram](location)?
+      - How's the weather in [Palakkad](location)?
+      - What's the temperature in [Kannur](location)?
+      - Is it rainy in [Kottayam](location)?
+      - How's the weather in [Wayanad](location)?
+      - How's the weather in [Mumbai](location)?
+      - What's the forecast for [Delhi](location)?
+      - Weather in [Chennai](location)
+      - Weather forecast for [Bangalore](location)
+      - Is it humid in [Kolkata](location)?
+      - How's the weather in [Hyderabad](location)?
+      - What's the temperature in [Ahmedabad](location)?
+      - Is it windy in [Pune](location)?
+      - How's the weather in [Jaipur](location)?
+      - What's the forecast for [Lucknow](location)?
+      - What's the weather like in [Visakhapatnam](location)?
+      - How's the climate in [Guwahati](location)?
+      - Weather in [Patna](location)
+      - Weather forecast for [Bhubaneswar](location)
+      - Is it cold in [Shimla](location)?
+      - How's the weather in [Dehradun](location)?
+      - What's the temperature in [Srinagar](location)?
+      - Is it foggy in [Chandigarh](location)?
+      - How's the weather in [Ranchi](location)?
+      - What's the forecast for [Thane](location)?
+      - What's the weather like in [Nagpur](location)?
+      - How's the climate in [Indore](location)?
+      - Weather in [Bhopal](location)
+      - Weather forecast for [Jaipur](location)
+      - Is it dry in [Gandhinagar](location)?
+      - How's the weather in [Agartala](location)?
+      - What's the temperature in [Kasaragod](location)?
+      - Is it raining in [Kollam](location)?
+      - How's the weather in [Pathanamthitta](location)?
+      - What's the forecast for [Idukki](location)?
+      - How's the climate in [Kottarakkara](location)?
+      - Weather in [Aluva](location)
+      - Weather forecast for [Adoor](location)
+      - Is it hot in [Thodupuzha](location)?
+      - How's the weather in [Perumbavoor](location)?
+      - What's the temperature in [Angamaly](location)?
+      - Is it rainy in [Vaikom](location)?
+      - How's the weather in [Muvattupuzha](location)?
+      - How's the weather in [Alleppey](location)?
+      - What's the forecast for [Changanassery](location)?
+      - What's the temperature like in [Kanjirappally](location)?
+      - How's the climate in [Pala](location)?
+      - Weather in [Vaikom](location)
+      - Weather forecast for [Erattupetta](location)
+      - Is it sunny in [Ettumanoor](location)?
+      - How's the weather in [Cherthala](location)?
+      - What's the temperature in [Kayamkulam](location)?
+      - Is it rainy in [Mavelikara](location)?
+      - How's the weather in [Haripad](location)?
+      - Weather in [Aroor](location)
+      - Weather forecast for [Thiruvalla](location)
+      - Is it hot in [Chengannur](location)?
+      - How's the weather in [Kanjikkuzhi](location)?
+      - What's the temperature in [Chingavanam](location)?
+      - Is it rainy in [Kaduthuruthy](location)?
+      - How's the weather in [Vaikom](location)?
+      - How's the weather in [Ponkunnam](location)?
+      - What's the forecast for [Kumarakom](location)?
+      - What's the temperature like in [Vaikom](location)?
+      - How's the climate in [Kottayam](location)?
+      - Weather in [Pala](location)
+      - Weather forecast for [Ettumanoor](location)
+      - Is it sunny in [Changanassery](location)?
+      - How's the weather in [Thiruvalla](location)?
+      - What's the temperature in [Kanjikkuzhi](location)?
+      - Is it rainy in [Chingavanam](location)?
+      - How's the weather in [Kaduthuruthy](location)?
+      - What's the forecast for [Vaikom](location)?
+      - How's the weather in [Ponkunnam](location)?
+      - What's the temperature like in [Kumarakom](location)?
+      - How's the climate in [Vaikom](location)?
+ 
+- intent: inform
+  examples: |
+      - [kochi](location)
+      - [ernakulam](location)
+      - [alappuzha](location)
+      - [alleppey](location)
+      - [kottayam](location)
+      - [thrissur](location)
+      - [trichur](location)
+      - [palakkad](location)
+      - [malappuram](location)
+      - [kozhikode](location)
+      - [calicut](location)
+      - [wayanad](location)
+      - [idukki](location)
+      - [munnar](location)
+      - [varkala](location)
+      - [kovalam](location)
+      - [guruvayur](location)
+      - [kasaragod](location)
+      - [bekal](location)
+      - [kanhangad](location)
+      - [thalassery](location)
+      - [payyanur](location)
+      - [cherthala](location)
+      - [muvattupuzha](location)
+      - [perumbavoor](location)
+      - [adyar](location)
+      - [changanassery](location)
+      - [chalakudy](location)
+      - [ponkunnam](location)
+      - [pala](location)
+      - [cherthala](location)
+      - [angamaly](location)
+      - [north paravur](location)
+      - [nedumangad](location)
+      - [attingal](location)
+      - [kodungallur](location)
+      - [thiruvalla](location)
+      - [haripad](location)
+      - [cherpulassery](location)
+      - [manjeri](location)
+      - [thaliparamba](location)
+      - [kannur](location)
+      - [payyannur](location)
+      - [mavelikkara](location)
+      - [chengannur](location)
+      - [pathanamthitta](location)
+      - [adoor](location)
+      - [pandalam](location)
+      - [vatakara](location)
+      - [thalassery](location)
+      - [kozhikode](location)
+      - [kottakkal](location)
+      - [taliparamba](location)
+      - [koyilandy](location)
+      - [perinthalmanna](location)
+      - [thrissur](location)
+      - [alathur](location)
+      - [kunnamkulam](location)
+      - [irinjalakuda](location)
+      - [mattannur](location)
+      - [pala](location)
+      - [perumbavoor](location)
+      - [kothamangalam](location)
+      - [malappuram](location)
+      - [valanchery](location)
+      - [manjeri](location)
+      - [kannur](location)
+      - [thaliparamba](location)
+      - [kasaragod](location)
+      - [kanhangad](location)
+      - [nileshwaram](location)
+      - [payyannur](location)
+      - [kunnamkulam](location)
+      - [irinjalakuda](location)
+      - [guruvayur](location)
+      - [kodungallur](location)
+      - [kothamangalam](location)
+      - [vypin](location)
+      - [cherthala](location)
+      - [kayamkulam](location)
+      - [mavelikkara](location)
+      - [changanassery](location)
+      - [cherthala](location)
+      - [punalur](location)
+      - [adoor](location)
+      - [changanassery](location)
+      - [thiruvalla](location)
+      - [kodungallur](location)
+      - [chavakkad](location)
+      - [kodungallur](location)
+      - [kannur](location)
+      - [kozhikode](location)
+      - [kannur](location)
+      - [thrissur](location)
+      - [kochi](location)
+      - [calicut](location)
+      - [wayanad](location)
+      - [idukki](location)
+      - [munnar](location)
+      - [varkala](location)
+      - [kovalam](location)
+      - [guruvayur](location)
+      - [kasaragod](location)
+      - [bekal](location)
+      - [kanhangad](location)
+      - [thalassery](location)
+      - [payyanur](location)
+      - [cherthala](location)
+      - [muvattupuzha](location)
+      - [perumbavoor](location)
+      - [adyar](location)
+      - [changanassery](location)
+      - [chalakudy](location)
+      - [ponkunnam](location)
+      - [pala](location)
+      - [cherthala](location)
+      - [angamaly](location)
+      - [north paravur](location)
+      - [nedumangad](location)
+      - [attingal](location)
+      - [kodungallur](location)
+      - [thiruvalla](location)
+      - [haripad](location)
+      - [cherpulassery](location)
+      - [manjeri](location)
+      - [thaliparamba](location)
+      - [kannur](location)
+      - [payyannur](location)
+      - [mavelikkara](location)
+      - [chengannur](location)
+      - [pathanamthitta](location)
+      - [adoor](location)
+      - [pandalam](location)
+      - [vatakara](location)
+      - [thalassery](location)
+      - [kozhikode](location)
+      - [kottakkal](location)
+      - [taliparamba](location)
+      - [koyilandy](location)
+      - [perinthalmanna](location)
+      - [thrissur](location)
+      - [alathur](location)
+      - [kunnamkulam](location)
+      - [irinjalakuda](location)
+      - [mattannur](location)
+      - [pala](location)
+      - [perumbavoor](location)
+      - [kothamangalam](location)
+      - [malappuram](location)
+      - [valanchery](location)
+      - [manjeri](location)
+      - [kannur](location)
+      - [thaliparamba](location)
+      - [kasaragod](location)
+      - [kanhangad](location)
+      - [nileshwaram](location)
+      - [payyannur](location)
+      - [kunnamkulam](location)
+      - [irinjalakuda](location)
+
+- regex: location
+  examples: |
+    - [a-zA-Z]+
+
+- intent: ask_weather
+  examples: |
+      - I want the weather
+      - Can you give me the weather?
+      - Tell me the weather
+      - Get weather information
+      - Weather forecast please
+      - What's the weather like?
+      - I need the weather update
+      - Could you tell me the weather?
+      - What's the forecast?
+
+- intent: search_restaurants
+  examples: |
+      - I'm looking for a restaurant
+      - Find restaurants?
+      - Search for restaurants
+      - Recommend some restaurants?
+      - Where can I eat ?
+      - I need a place to eat
+      - Any good restaurants ?
+      - Find me a place to eat
+
+- intent: search_attractions
+  examples: |
+      - I'm looking for a attraction
+      - Find attractions?
+      - Search for tourist attraction
+      - Recommend some attractions?
+
+- intent: search_hotels
+  examples: |
+      - I'm looking for a hotel
+      - Find hotel?
+      - Search for a stay
+      - Recommend some hotels?

@@ -57,7 +57,7 @@ const places = async (req, res) => {
         tr_latitude: ne_lat,
       },
       headers: {
-        'X-RapidAPI-Key': 'd8d4b8291cmsh85f232d31a4a4abp190359jsnf01ca06decb5',
+        'X-RapidAPI-Key': '40f30c1ac8msh837632ac22245dbp184beajsn7e0a586d2d7a',
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
       },
     });
@@ -137,7 +137,7 @@ const getLocationData=async(req,res)=>{
     const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-by-latlng`, {
       params: { latitude: lat, longitude: lng },
       headers: {
-        'x-rapidapi-key': 'd8d4b8291cmsh85f232d31a4a4abp190359jsnf01ca06decb5',
+        'x-rapidapi-key': '40f30c1ac8msh837632ac22245dbp184beajsn7e0a586d2d7a',
         'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
       },
     });

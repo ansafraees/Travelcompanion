@@ -1,0 +1,35 @@
+.custom-message {
+    margin: -4px 0;
+}
+
+.custom-image{
+    margin-left: 58px;
+}
+  
+.custom-button {
+    background-color: #191970;
+    border: none;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 0px 0px 0px 58px;
+    transition-duration: 0.4s;
+    height: 40px;
+    width: 204px;
+    font-size: 16px;
+}
+  
+  .custom-button:last-child {
+    margin-right: 0; /* Remove margin-right for the last button to eliminate gap */
+  }
+  
+  .custom-button:hover {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    border: 2px solid #191970; /* Green border */
+  }
+  
