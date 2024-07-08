@@ -2,9 +2,10 @@
 .chat-card-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     position: relative;
     width: 100%;
+    padding: 4px;
   }
 
   .chat-card-container-image{
@@ -12,7 +13,7 @@
   }
   
   .scroll-button.left {
-    left: 30px;
+    left: 15px;
     font-size: 34px;
     color: rgb(255, 255, 255);
     position: absolute;
@@ -39,7 +40,7 @@
     color: rgb(255, 255, 255);
     position: absolute;
     top: 45%;
-    width:min-content;
+    width:20px;
     transform: translateY(-50%);
     background: rgba(54, 71, 86, 0.445);
     border: none;
@@ -47,7 +48,7 @@
     cursor: pointer;
     padding: 0px;
     z-index: 1;
-    right: 10px;
+    right: 110px;
   }
   
   .card {

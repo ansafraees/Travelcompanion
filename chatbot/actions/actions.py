@@ -10,183 +10,37 @@ class ActionSearchHotel(Action):
     def name(self):
         return "action_search_hotels"
 
-    def run(self, dispatcher, tracker, domain):
-        user_location = tracker.get_slot('location')
-        print(user_location)
-        # Geocode the location (city name) using Google Maps Geocoding API
-        coordinates = self.geocode_location(user_location)
-        print(coordinates)
-
-        if not coordinates:
-            dispatcher.utter_message(text="Sorry, I couldn't find the coordinates for the provided location.")
-            return []
-
-        latitude,longitutude=coordinates
-        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
-        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitutude}&radius=5000&type=lodging&key={api_key}'
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        response = requests.get(search_url)
-        results = response.json().get('results', [])
+        location = tracker.get_slot('location')
 
-        if not results:
-            dispatcher.utter_message(text="I couldn't find any attractions nearby.")
-            return []
-
-        results.sort(key=lambda x: ((x.get('rating', 0))*(x.get('user_ratings_total', 0)/7)) , reverse=True)
-
-        attractions = []
-        for result in results[:5]:  # Limit to 5 results
-            name = result.get('name')
-            rating = result.get('rating', 0)
-            user_ratings_total= result.get('user_ratings_total', 0)
-            vicinity = result.get('vicinity')
-            latitude= result.get('geometry', {}).get('location', {}).get('lat')
-            latitude= result.get('geometry', {}).get('location', {}).get('lng')
-            place_id= result.get('place_id')
-            types =result.get('types')
-            photo_reference = result.get('photos', [{}])[0].get('photo_reference')
-            photo_url = f'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={photo_reference}&key={api_key}' if photo_reference else None
-            
-            content_info = {
-                'name': name,
-                'rating': rating,
-                'user_ratings_total': user_ratings_total,
-                'vicinity': vicinity,
-                'photo_url': photo_url,
-                'latitude': latitude,
-                'longitude': longitutude,
-                'place_id': place_id,
-            }
-            attractions.append(content_info)
-        dispatcher.utter_message(text="Here are top 5 hotels I found!")
-        dispatcher.utter_message(json_message={"content": attractions})
-        print(content_info)
-        return []
-    
-    def geocode_location(self, location):
-        # Geocode the location (city name) using Google Maps Geocoding API
-        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
-        geocode_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}'
-
-        response = requests.get(geocode_url)
-        if response.status_code == 200:
-            data = response.json()
-            if data['results']:
-                latitude = data['results'][0]['geometry']['location']['lat']
-                longitude = data['results'][0]['geometry']['location']['lng']
-                return latitude, longitude
-            else:
-                return None
-        else:
-            return None
-
-
-class ActionSearchAttraction(Action):
-
-    def name(self):
-        return "action_search_attractions"
-
-    def run(self, dispatcher, tracker, domain):
-
-        user_location = tracker.get_slot('location')
-        
-        coordinates = self.geocode_location(user_location)
-        print(coordinates)
-
-        if not coordinates:
-            dispatcher.utter_message(text="Sorry, I couldn't find the coordinates for the provided location.")
-            return []
-
-        latitude,longitutude=coordinates
-        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
-        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitutude}&radius=5000&type=tourist_attraction&key={api_key}'
-        
-        response = requests.get(search_url)
-        results = response.json().get('results', [])
-
-        if not results:
-            dispatcher.utter_message(text="I couldn't find any attractions nearby.")
-            return []
-
-        results.sort(key=lambda x: ((x.get('rating', 0))*(x.get('user_ratings_total', 0)/7)) , reverse=True)
-
-        attractions = []
-        for result in results[:5]:  # Limit to 5 results
-            name = result.get('name')
-            rating = result.get('rating', 0)
-            user_ratings_total= result.get('user_ratings_total', 0)
-            vicinity = result.get('vicinity')
-            latitude= result.get('geometry', {}).get('location', {}).get('lat')
-            latitude= result.get('geometry', {}).get('location', {}).get('lng')
-            place_id= result.get('place_id')
-            types =result.get('types')
-            photo_reference = result.get('photos', [{}])[0].get('photo_reference')
-            photo_url = f'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={photo_reference}&key={api_key}' if photo_reference else None
-            
-            content_info = {
-                'name': name,
-                'rating': rating,
-                'user_ratings_total': user_ratings_total,
-                'vicinity': vicinity,
-                'photo_url': photo_url,
-                'latitude': latitude,
-                'longitude': longitutude,
-                'place_id': place_id,
-            }
-            attractions.append(content_info)
-
-        dispatcher.utter_message(json_message={"content": attractions})
-        print(content_info)
-        return []
-    
-    def geocode_location(self, location):
-        # Geocode the location (city name) using Google Maps Geocoding API
-        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
-        geocode_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}'
-
-        response = requests.get(geocode_url)
-        if response.status_code == 200:
-            data = response.json()
-            if data['results']:
-                latitude = data['results'][0]['geometry']['location']['lat']
-                longitude = data['results'][0]['geometry']['location']['lng']
-                return latitude, longitude
-            else:
-                return None
-        else:
-            return None
-
-
-
-class ActionSearchRestaurants(Action):
-
-    def name(self):
-        return "action_search_restaurants"
-
-    def run(self, dispatcher, tracker, domain):
-        user_location = tracker.get_slot('location')
+        # If location is not provided in the user message, use metadata
         if not location:
             metadata = tracker.latest_message.get('metadata', {})
-            if 'location' in metadata:
-                latitude = metadata['location'].get('latitude')
-                longitude = metadata['location'].get('longitude')
-                if latitude and longitude:
+            if 'locations' in metadata:
+                latitude = metadata['locations'].get('latitude')
+                longitude = metadata['locations'].get('longitude')
+                coordinates={latitude,longitude}
+                #if latitude and longitude:
                     # Fetch location name using reverse geocoding (optional)
-                    location = self.reverse_geocode(latitude, longitude)
-                else:
-                    dispatcher.utter_message(response="utter_ask_location_weather")
-                    return []
+                    #location = self.geocode_location(latitude, longitude)
+                #else:
+                    #dispatcher.utter_message(response="utter_ask_location_restaurant")
+                   # return []
         
-        coordinates = self.geocode_location(user_location)
-        print(coordinates)
+        if location:          
+            coordinates = self.geocode_location(location)
+            print(coordinates)
 
         if not coordinates:
             dispatcher.utter_message(text="Sorry, I couldn't find the coordinates for the provided location.")
             return []
 
-        latitude,longitutude=coordinates
+        latitude,longitude=coordinates
         api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
-        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitutude}&radius=5000&type=restaurant&key={api_key}'
+        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius=5000&type=lodging&key={api_key}'
         
         response = requests.get(search_url)
         results = response.json().get('results', [])
@@ -217,7 +71,194 @@ class ActionSearchRestaurants(Action):
                 'vicinity': vicinity,
                 'photo_url': photo_url,
                 'latitude': latitude,
-                'longitude': longitutude,
+                'longitude': longitude,
+                'place_id': place_id,
+            }
+            restaurants.append(content_info)
+
+        dispatcher.utter_message(json_message={"content": restaurants})
+        print(content_info)
+        return []
+    
+    def geocode_location(self, location):
+        # Geocode the location (city name) using Google Maps Geocoding API
+        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
+        geocode_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}'
+
+        response = requests.get(geocode_url)
+        if response.status_code == 200:
+            data = response.json()
+            if data['results']:
+                latitude = data['results'][0]['geometry']['location']['lat']
+                longitude = data['results'][0]['geometry']['location']['lng']
+                return latitude, longitude
+            else:
+                return None
+        else:
+            return None
+
+
+class ActionSearchAttraction(Action):
+
+    def name(self):
+        return "action_search_attractions"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        location = tracker.get_slot('location')
+
+        # If location is not provided in the user message, use metadata
+        if not location:
+            metadata = tracker.latest_message.get('metadata', {})
+            if 'locations' in metadata:
+                latitude = metadata['locations'].get('latitude')
+                longitude = metadata['locations'].get('longitude')
+                coordinates={latitude,longitude}
+                #if latitude and longitude:
+                    # Fetch location name using reverse geocoding (optional)
+                    #location = self.geocode_location(latitude, longitude)
+                #else:
+                    #dispatcher.utter_message(response="utter_ask_location_restaurant")
+                   # return []
+        
+        if location:          
+            coordinates = self.geocode_location(location)
+            print(coordinates)
+
+        if not coordinates:
+            dispatcher.utter_message(text="Sorry, I couldn't find the coordinates for the provided location.")
+            return []
+
+        latitude,longitude=coordinates
+        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
+        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius=5000&type=tourist_attraction&key={api_key}'
+        
+        response = requests.get(search_url)
+        results = response.json().get('results', [])
+
+        if not results:
+            dispatcher.utter_message(text="Sorry, I couldn't find any hotels .")
+            return []
+
+        results.sort(key=lambda x: ((x.get('rating', 0))*(x.get('user_ratings_total', 0)/7)) , reverse=True)
+
+        restaurants = []
+        for result in results[:5]:  # Limit to 5 results
+            name = result.get('name')
+            rating = result.get('rating', 0)
+            user_ratings_total= result.get('user_ratings_total', 0)
+            vicinity = result.get('vicinity')
+            latitude= result.get('geometry', {}).get('location', {}).get('lat')
+            latitude= result.get('geometry', {}).get('location', {}).get('lng')
+            place_id= result.get('place_id')
+            types =result.get('types')
+            photo_reference = result.get('photos', [{}])[0].get('photo_reference')
+            photo_url = f'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={photo_reference}&key={api_key}' if photo_reference else None
+            
+            content_info = {
+                'name': name,
+                'rating': rating,
+                'user_ratings_total': user_ratings_total,
+                'vicinity': vicinity,
+                'photo_url': photo_url,
+                'latitude': latitude,
+                'longitude': longitude,
+                'place_id': place_id,
+            }
+            restaurants.append(content_info)
+
+        dispatcher.utter_message(json_message={"content": restaurants})
+        print(content_info)
+        return []
+    
+    def geocode_location(self, location):
+        # Geocode the location (city name) using Google Maps Geocoding API
+        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
+        geocode_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}'
+
+        response = requests.get(geocode_url)
+        if response.status_code == 200:
+            data = response.json()
+            if data['results']:
+                latitude = data['results'][0]['geometry']['location']['lat']
+                longitude = data['results'][0]['geometry']['location']['lng']
+                return latitude, longitude
+            else:
+                return None
+        else:
+            return None
+
+
+
+class ActionSearchRestaurants(Action):
+
+    def name(self):
+        return "action_search_restaurants"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        location = tracker.get_slot('location')
+
+        # If location is not provided in the user message, use metadata
+        if not location:
+            metadata = tracker.latest_message.get('metadata', {})
+            if 'locations' in metadata:
+                latitude = metadata['locations'].get('latitude')
+                longitude = metadata['locations'].get('longitude')
+                coordinates={latitude,longitude}
+                #if latitude and longitude:
+                    # Fetch location name using reverse geocoding (optional)
+                    #location = self.geocode_location(latitude, longitude)
+                #else:
+                    #dispatcher.utter_message(response="utter_ask_location_restaurant")
+                   # return []
+        
+        if location:          
+            coordinates = self.geocode_location(location)
+            print(coordinates)
+
+        if not coordinates:
+            dispatcher.utter_message(text="Sorry, I couldn't find the coordinates for the provided location.")
+            return []
+
+        latitude,longitude=coordinates
+        api_key = 'AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU'
+        search_url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius=5000&type=restaurant&key={api_key}'
+        
+        response = requests.get(search_url)
+        results = response.json().get('results', [])
+
+        if not results:
+            dispatcher.utter_message(text="I couldn't find any restaurants nearby.")
+            return []
+
+        results.sort(key=lambda x: ((x.get('rating', 0))*(x.get('user_ratings_total', 0)/7)) , reverse=True)
+
+        restaurants = []
+        for result in results[:5]:  # Limit to 5 results
+            name = result.get('name')
+            rating = result.get('rating', 0)
+            user_ratings_total= result.get('user_ratings_total', 0)
+            vicinity = result.get('vicinity')
+            latitude= result.get('geometry', {}).get('location', {}).get('lat')
+            latitude= result.get('geometry', {}).get('location', {}).get('lng')
+            place_id= result.get('place_id')
+            types =result.get('types')
+            photo_reference = result.get('photos', [{}])[0].get('photo_reference')
+            photo_url = f'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={photo_reference}&key={api_key}' if photo_reference else None
+            
+            content_info = {
+                'name': name,
+                'rating': rating,
+                'user_ratings_total': user_ratings_total,
+                'vicinity': vicinity,
+                'photo_url': photo_url,
+                'latitude': latitude,
+                'longitude': longitude,
                 'place_id': place_id,
             }
             restaurants.append(content_info)
@@ -265,9 +306,9 @@ class ActionWeather(Action):
         # If location is not provided in the user message, use metadata
         if not location:
             metadata = tracker.latest_message.get('metadata', {})
-            if 'location' in metadata:
-                latitude = metadata['location'].get('latitude')
-                longitude = metadata['location'].get('longitude')
+            if 'locations' in metadata:
+                latitude = metadata['locations'].get('latitude')
+                longitude = metadata['locations'].get('longitude')
                 if latitude and longitude:
                     # Fetch location name using reverse geocoding (optional)
                     location = self.reverse_geocode(latitude, longitude)

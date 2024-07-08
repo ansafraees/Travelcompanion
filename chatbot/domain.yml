@@ -10,13 +10,16 @@ intents:
   - mood_happy
   - bot_challenge
   - get_weather
+  - get_restaurant
+  - get_hotel
+  - get_attraction
   - inform
   - glad
   - ask_weather
+  - ask_restaurant
   - invalid_input
-  - search_restaurants
-  - search_attractions
-  - search_hotels
+  - ask_attraction
+  - ask_hotel
 
 
 entities:
@@ -43,12 +46,12 @@ responses:
       buttons:
         - title: "Weather Forecast"
           payload: "/ask_weather"
-        - title: "Search for hotels"
-          payload: "/search_hotels"
-        - title: "Search for Restaurents"
-          payload: "/search_restaurents"
-        - title: "Search for Attractions"
-          payload: "/search_attractions"
+        - title: "Find hotels"
+          payload: "/ask_hotel"
+        - title: "Find Restaurents"
+          payload: "/ask_restaurant"
+        - title: "Find Attractions"
+          payload: "ask_attraction"
 
   utter_cheer_up:
   - custom:
@@ -68,18 +71,14 @@ responses:
     buttons:
       - title: "Weather Forecast"
         payload: "/ask_weather"
-      - title: "Search for hotels"
-        payload: "/search_hotels"
-      - title: "Search for Restaurants"
-        payload: "/search_restaurants"
-      - title: "Search for Attractions"
-        payload: "/search_attractions"
+      - title: "Find hotels"
+        payload: "/ask_hotel"
+      - title: "Find Restaurants"
+        payload: "/ask_restaurant"
+      - title: "Find Attractions"
+        payload: "/ask_attraction"
 
-  utter_ask_location_weather:
-    - text: "Do you know want to use your current location?"
 
-  utter_get_city_name:
-    - text: "Please provide the city name"
 
   utter_None:
     - text: "Sorry, I didn't understand that. Can you please rephrase?"
@@ -95,15 +94,30 @@ responses:
   
   utter_default_affirm_response:
     - text: "I'm not sure what you meant by 'yes'. Could you please clarify your request?"
+
+  utter_ask_location_weather:
+    - text: "Do you know want to use your current location?"
   
-  utter_get_restaurant_city_name:
-    - text: "Can you please provide your city name"
+  utter_ask_location_restaurant:
+    - text: "Do you know want to use your current location?"
 
-  utter_get_attraction_details:
-    - text: "can you please provide your city name"
+  utter_ask_location_attraction:
+    - text: "Do you know want to use your current location?"
 
-  utter_get_hotel_details:
-    - text: "can you please provide your city name"
+  utter_ask_location_hotel:
+    - text: "Do you know want to use your current location?"
+
+  utter_get_city_name:
+    - text: "Please provide the city name"
+
+  utter_get_city_name_restaurant:
+    - text: "Please provide the city name"
+
+  utter_get_city_name_attraction:
+    - text: "Please provide the city name"
+
+  utter_get_city_name_hotel:
+    - text: "Please provide the city name"
 
   
 

@@ -4,7 +4,7 @@ import React from 'react';
 import './CustomMessages.css';
 
 const CustomMessage = ({ content }) => {
-  console.log('button here');
+  console.log('custom message got');
   if (!content || !content.type) {
     console.log('CustomMessage received invalid content:', content);
     return null;

@@ -38,9 +38,9 @@ stories:
   - action: action_weather
   - action: action_restart
 
-- story: ask for location path 1
+- story: ask for weather location path 1
   steps:
-    - action: utter_ask_location
+    - action: utter_ask_location_weather
     - intent: deny
     - action: utter_get_city_name
     - intent: inform
@@ -49,9 +49,9 @@ stories:
     - action: action_weather
     - action: action_restart
 
-- story: ask for location path 2
+- story: ask for weather location path 2
   steps:
-    - action: utter_ask_location
+    - action: utter_ask_location_weather
     - intent: affirm
     - action: action_weather
     - action: action_restart
@@ -71,37 +71,145 @@ stories:
 - story: ask for weather with current location
   steps:
     - intent: ask_weather
-    - action: utter_ask_location
+    - action: utter_ask_location_weather
     - intent: affirm
     - action: action_weather
     - action: action_restart
 
-- story: search restaurants
+- story: get restaurant with city
   steps:
-    - intent: search_restaurants
-    - action: utter_get_restaurant_city_name
+  - intent: get_restaurant
+    entities:
+     - location: "Pattambi"
+  - action: action_search_restaurants
+  - action: action_restart
+
+- story: ask for restaurant location path 1
+  steps:
+    - action: utter_ask_location_restaurant
+    - intent: deny
+    - action: utter_get_city_name_restaurant
     - intent: inform
       entities:
-        - location
+        - location: city
     - action: action_search_restaurants
     - action: action_restart
 
-- story: search attractions
+- story: ask for restaurant location path 2
   steps:
-    - intent: search_attractions
-    - action: utter_get_attraction_details
+    - action: utter_ask_location_restaurant
+    - intent: affirm
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: ask for restaurant without current location
+  steps:
+    - intent: ask_restaurant
+    - action: utter_ask_location_restaurant
+    - intent: deny
+    - action: utter_get_city_name_restaurant
     - intent: inform
       entities:
-        - location
+        - location: "city"
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: ask for restaurant with current location
+  steps:
+    - intent: ask_restaurant
+    - action: utter_ask_location_restaurant
+    - intent: affirm
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: get hotel with city
+  steps:
+  - intent: get_hotel
+    entities:
+     - location: "Pattambi"
+  - action: action_search_hotels
+  - action: action_restart
+
+- story: ask for hotel location path 1
+  steps:
+    - action: utter_ask_location_hotel
+    - intent: deny
+    - action: utter_get_city_name_hotel
+    - intent: inform
+      entities:
+        - location: city
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: ask for hotel location path 2
+  steps:
+    - action: utter_ask_location_hotel
+    - intent: affirm
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: ask for hotel without current location
+  steps:
+    - intent: ask_hotel
+    - action: utter_ask_location_hotel
+    - intent: deny
+    - action: utter_get_city_name_hotel
+    - intent: inform
+      entities:
+        - location: "city"
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: ask for hotel with current location
+  steps:
+    - intent: ask_hotel
+    - action: utter_ask_location_hotel
+    - intent: affirm
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: get attraction with city
+  steps:
+  - intent: get_attraction
+    entities:
+     - location: "Pattambi"
+  - action: action_search_attractions
+  - action: action_restart
+
+- story: ask for attraction location path 1
+  steps:
+    - action: utter_ask_location_attraction
+    - intent: deny
+    - action: utter_get_city_name_attraction
+    - intent: inform
+      entities:
+        - location: city
     - action: action_search_attractions
     - action: action_restart
 
-- story: search hotels
+- story: ask for attraction location path 2
   steps:
-    - intent: search_hotels
-    - action: utter_get_hotel_details
+    - action: utter_ask_location_attraction
+    - intent: affirm
+    - action: action_search_attractions
+    - action: action_restart
+
+- story: ask for attraction without current location
+  steps:
+    - intent: ask_attraction
+    - action: utter_ask_location_attraction
+    - intent: deny
+    - action: utter_get_city_name_attraction
     - intent: inform
       entities:
-        - location
-    - action: action_search_hotels
+        - location: "city"
+    - action: action_search_attractions
+    - action: action_restart
+
+- story: ask for attraction with current location
+  steps:
+    - intent: ask_attraction
+    - action: utter_ask_location_attraction
+    - intent: affirm
+    - action: action_search_attractions
     - action: action_restart

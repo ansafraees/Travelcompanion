@@ -42,7 +42,7 @@ const List = ({places,type, setType, rating, setRating, isLoading })=>{
             </Select>
           </FormControl>
           
-          <Grid container spacing={3} style={{marginTop:10,height: '75vh', overflow: 'auto'}} >
+          <Grid container spacing={3} style={{marginTop:10,height: '75vh', width:"7hvh",overflow: 'auto'}} >
             {places?.map((place, i) => (
               <Grid key={i} item xs={25}>
                 {place.name && <PlaceCard place={place}/>}

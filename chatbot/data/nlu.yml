@@ -383,28 +383,275 @@ nlu:
       - I need the weather update
       - Could you tell me the weather?
       - What's the forecast?
+      - What's the weather report?
+      - How's the weather today?
+      - Can you check the weather for me?
+      - Let me know the weather
+      - What does the weather look like?
+      - What's the temperature outside?
+      - Is it going to rain today?
+      - Do I need an umbrella today?
+      - What's the weather going to be like tomorrow?
+      - Will it be sunny today?
+      - How hot is it right now?
+      - What's the weather prediction?
+      - How's the weather looking?
+      - What's the weather update for today?
+      - Is there a weather alert?
+      - Can you tell me the weather forecast for this weekend?
+      - What's the weather for this afternoon?
+      - Can you give me today's weather report?
+      - What should I expect from the weather today?
+      - How's the weather this morning?
+      - Will it snow today?
+      - How windy is it outside?
+      - Is it cloudy right now?
+      - Give me the current weather conditions
+      - What's the weather outlook for this evening?
+      - What's the weather going to be like this week?
+      - Can you tell me if it's going to be cold tomorrow?
+      - What's the weather like ?
+      - Is there any chance of thunderstorms today?
+      - How's the weather shaping up for the day?
+      - Will there be any rain this week?
 
-- intent: search_restaurants
+- intent: ask_restaurant
   examples: |
       - I'm looking for a restaurant
       - Find restaurants?
       - Search for restaurants
       - Recommend some restaurants?
-      - Where can I eat ?
+      - Where can I eat?
       - I need a place to eat
-      - Any good restaurants ?
+      - Any good restaurants?
       - Find me a place to eat
+      - Can you suggest a place to eat?
+      - Do you know any good restaurants nearby?
+      - Where should I go for dinner?
+      - I'm hungry, any restaurant recommendations?
+      - Suggest a dining place.
+      - What are some good places to eat around here?
+      - Recommend a nice restaurant.
+      - Where can I find a good meal?
+      - Any places to eat you recommend?
+      - Can you find a restaurant for me?
+      - I'm looking for a good dining spot.
+      - Help me find a place to eat.
+      - What are the best restaurants in this area?
+      - Point me to a good restaurant.
+      - I need restaurant suggestions.
+      - Any suggestions for a place to dine?
+      - Looking for a place to grab a bite.
+      - Where's the best place to eat around here?
+      - What's a popular restaurant in this city?
+      - I want to try a new restaurant.
+      - Are there any cozy restaurants nearby?
+      - Recommend a family-friendly restaurant.
+      - Any vegan-friendly restaurants you know of?
+      - Can you recommend a romantic restaurant?
+      - I'm in the mood for ethnic cuisine.
+      - Any hidden gem restaurants?
+      - Where can I find a nice brunch spot?
+      - I'm looking for a place with outdoor seating.
+      - Is there a place with live music and good food?
+      - Can you suggest a quick lunch spot?
+      - What's a good place for a business dinner?
 
-- intent: search_attractions
+- intent: ask_attraction
   examples: |
       - I'm looking for a attraction
       - Find attractions?
       - Search for tourist attraction
       - Recommend some attractions?
 
-- intent: search_hotels
+- intent: ask_hotel
   examples: |
       - I'm looking for a hotel
       - Find hotel?
       - Search for a stay
       - Recommend some hotels?
+
+- intent: get_hotel
+  examples: |
+      - Find hotels in [Kochi](location)
+      - fetch me hotel in [Paris](location)
+      - hotel [Delhi](location)
+      - I am looking for hotels in [Tokyo](location)
+
+- intent: get_attraction
+  examples: |
+      - Find attraction in [Kochi](location)
+      - fetch me attractions in [Paris](location)
+      - attractions [Delhi](location)
+      - I am looking for tourist places in [Tokyo](location)
+
+- intent: get_restaurant
+  examples: |
+      - Find restaurants in [Kochi](location)
+      - fetch me restaurant in [Paris](location)
+      - restaurant [Delhi](location)
+      - I am looking for restaurants in [Tokyo](location)
+      - Show me places to eat in [Mumbai](location)
+      - Any good restaurants in [Berlin](location)?
+      - Can you find a restaurant in [New York](location)?
+      - Where can I eat in [San Francisco](location)?
+      - Find a place to dine in [Los Angeles](location)
+      - Locate a restaurant in [Chicago](location)
+      - Recommend me a restaurant in [Boston](location)
+      - Are there any restaurants in [Seattle](location)?
+      - I need a place to eat in [Houston](location)
+      - Suggest a dining place in [Miami](location)
+      - Where can I find good food in [Toronto](location)?
+      - List some restaurants in [Vancouver](location)
+      - Find restaurants in [Thrissur](location)
+      - Any good restaurants in [Kollam](location)?
+      - Show me places to eat in [Kottayam](location)
+      - I am looking for restaurants in [Alappuzha](location)
+      - Find a place to dine in [Palakkad](location)
+      - Recommend me a restaurant in [Pathanamthitta](location)
+      - Are there any restaurants in [Kannur](location)?
+      - I need a place to eat in [Idukki](location)
+      - Suggest a dining place in [Malappuram](location)
+      - Where can I find good food in [Kasaragod](location)?
+      - List some restaurants in [Wayanad](location)
+      - Locate a restaurant in [Thodupuzha](location)
+      - Where can I eat in [Attingal](location)?
+      - Fetch me restaurant in [Changanassery](location)
+      - Show me places to eat in [Punalur](location)
+      - Find a place to dine in [Muvattupuzha](location)
+      - Recommend me a restaurant in [Perumbavoor](location)
+      - Any good restaurants in [Chennai](location)?
+      - Show me places to eat in [Bangalore](location)
+      - I am looking for restaurants in [Hyderabad](location)
+      - Find a place to dine in [Ahmedabad](location)
+      - Recommend me a restaurant in [Pune](location)
+      - Are there any restaurants in [Jaipur](location)?
+      - I need a place to eat in [Surat](location)
+      - Suggest a dining place in [Lucknow](location)
+      - Where can I find good food in [Kanpur](location)?
+      - List some restaurants in [Nagpur](location)
+      - Locate a restaurant in [Visakhapatnam](location)
+      - Find a place to dine in [Bhopal](location)
+      - Recommend me a restaurant in [Patna](location)
+      - Are there any restaurants in [Ludhiana](location)?
+      - I need a place to eat in [Agra](location)
+      - Suggest a dining place in [Nashik](location)
+      - Where can I find good food in [Vadodara](location)?
+      - List some restaurants in [Varanasi](location)
+      - Locate a restaurant in [Madurai](location)
+      - Find a place to dine in [Meerut](location)
+      - Recommend me a restaurant in [Rajkot](location)
+      - Are there any restaurants in [Jabalpur](location)?
+      - I need a place to eat in [Amritsar](location)
+      - Suggest a dining place in [Jamshedpur](location)
+      - Where can I find good food in [Ranchi](location)?
+      - List some restaurants in [Raipur](location)
+      - Locate a restaurant in [Kota](location)
+      - Find a place to dine in [Guwahati](location)
+      - Recommend me a restaurant in [Chandigarh](location)
+      - Are there any restaurants in [Mysore](location)?
+      - I need a place to eat in [Gwalior](location)
+      - Suggest a dining place in [Bhubaneswar](location)
+      - Where can I find good food in [Jodhpur](location)?
+      - List some restaurants in [Tiruchirappalli](location)
+      - Locate a restaurant in [Salem](location)
+      - Find a place to dine in [Warangal](location)
+      - Recommend me a restaurant in [Guntur](location)
+      - Are there any restaurants in [Udaipur](location)?
+      - I need a place to eat in [Gurgaon](location)
+      - Suggest a dining place in [Noida](location)
+      - find restaurants in [Sydney](location)
+      - fetch me restaurant in [Melbourne](location)
+      - restaurant in [Brisbane](location)
+      - I am looking for restaurants in [Adelaide](location)
+      - Show me places to eat in [Perth](location)
+      - Any good restaurants in [Auckland](location)?
+      - Can you find a restaurant in [Wellington](location)?
+      - Where can I eat in [Christchurch](location)?
+      - Find a place to dine in [Dubai](location)
+      - Locate a restaurant in [Abu Dhabi](location)
+      - Recommend me a restaurant in [Doha](location)
+      - Are there any restaurants in [Riyadh](location)?
+      - I need a place to eat in [Jeddah](location)
+      - Suggest a dining place in [Kuwait City](location)
+      - Where can I find good food in [Manama](location)?
+      - List some restaurants in [Muscat](location)
+      - Locate a restaurant in [Amman](location)
+      - Find a place to dine in [Beirut](location)
+      - Recommend me a restaurant in [Cairo](location)
+      - Are there any restaurants in [Alexandria](location)?
+      - I need a place to eat in [Istanbul](location)
+      - Suggest a dining place in [Ankara](location)
+      - Where can I find good food in [Athens](location)?
+      - List some restaurants in [Thessaloniki](location)
+      - Locate a restaurant in [Rome](location)
+      - Find a place to dine in [Milan](location)
+      - Recommend me a restaurant in [Naples](location)
+      - Are there any restaurants in [Venice](location)?
+      - I need a place to eat in [Florence](location)
+      - Suggest a dining place in [Barcelona](location)
+      - Where can I find good food in [Madrid](location)?
+      - List some restaurants in [Valencia](location)
+      - Locate a restaurant in [Seville](location)
+      - Find a place to dine in [Lisbon](location)
+      - Recommend me a restaurant in [Porto](location)
+      - Are there any restaurants in [Brussels](location)?
+      - I need a place to eat in [Amsterdam](location)
+      - Suggest a dining place in [Rotterdam](location)
+      - Where can I find good food in [The Hague](location)?
+      - List some restaurants in [Utrecht](location)
+      - Locate a restaurant in [Vienna](location)
+      - Find a place to dine in [Salzburg](location)
+      - Recommend me a restaurant in [Zurich](location)
+      - Are there any restaurants in [Geneva](location)?
+      - I need a place to eat in [Bern](location)
+      - Suggest a dining place in [Warsaw](location)
+      - Where can I find good food in [Krakow](location)?
+      - List some restaurants in [Wroclaw](location)
+      - Locate a restaurant in [Gdansk](location)
+      - Find a place to dine in [Stockholm](location)
+      - Recommend me a restaurant in [Gothenburg](location)
+      - Are there any restaurants in [Malmo](location)?
+      - I need a place to eat in [Copenhagen](location)
+      - Suggest a dining place in [Oslo](location)
+      - Where can I find good food in [Bergen](location)?
+      - List some restaurants in [Helsinki](location)
+      - Locate a restaurant in [Tampere](location)
+      - Find a place to dine in [Reykjavik](location)
+      - Recommend me a restaurant in [Dublin](location)
+      - Are there any restaurants in [Belfast](location)?
+      - I need a place to eat in [Edinburgh](location)
+      - Suggest a dining place in [Glasgow](location)
+      - Where can I find good food in [Cardiff](location)?
+      - List some restaurants in [Bristol](location)
+      - Locate a restaurant in [Liverpool](location)
+      - Find a place to dine in [Manchester](location)
+      - Recommend me a restaurant in [Birmingham](location)
+      - Are there any restaurants in [Leeds](location)?
+      - I need a place to eat in [Sheffield](location)
+      - Suggest a dining place in [Nottingham](location)
+      - Where can I find good food in [Leicester](location)?
+      - List some restaurants in [Oxford](location)
+      - Locate a restaurant in [Cambridge](location)
+      - Find a place to dine in [York](location)
+      - Recommend me a restaurant in [Newcastle](location)
+      - Are there any restaurants in [Durham](location)?
+      - I need a place to eat in [Brighton](location)
+      - Suggest a dining place in [Southampton](location)
+      - Where can I find good food in [Portsmouth](location)?
+      - List some restaurants in [Exeter](location)
+      - Locate a restaurant in [Plymouth](location)
+      - Find a place to dine in [Bath](location)
+      - Recommend me a restaurant in [Bournemouth](location)
+      - Are there any restaurants in [Reading](location)?
+      - I need a place to eat in [Slough](location)
+      - Suggest a dining place in [Milton Keynes](location)
+      - Where can I find good food in [Northampton](location)?
+      - List some restaurants in [Swindon](location)
+      - Locate a restaurant in [Luton](location)
+      - Find a place to dine in [Derby](location)
+      - Recommend me a restaurant in [Aberdeen](location)
+      - Are there any restaurants in [Dundee](location)?
+      - I need a place to eat in [Inverness](location)
+      - Suggest a dining place in [Stirling](location)
+      - Where can I find good food in [Perth](location)

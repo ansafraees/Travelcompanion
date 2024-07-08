@@ -10,7 +10,7 @@ const Map = ({ setCoords, setBounds, coords = { lat: 0, lng: 0 }, places }) => {
 
 
   useEffect(() => {
-    setDebouncedFunction(() => _.debounce(handleBoundsChanged, 6000));
+    setDebouncedFunction(() => _.debounce(handleBoundsChanged, 2000));
   }, []);
 
   const handleLoad = (mapInstance) => {
@@ -31,7 +31,7 @@ const Map = ({ setCoords, setBounds, coords = { lat: 0, lng: 0 }, places }) => {
   };
 
   return (
-    <div style={{ height: "90vh", width: "150vh" }}>
+    <div style={{ height: "90vh" }}>
       <LoadScript googleMapsApiKey="AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU">
         <GoogleMap
           mapContainerStyle={{ width: '100%', height: '100%' }}

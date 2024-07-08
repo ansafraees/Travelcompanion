@@ -2,87 +2,17 @@
 .list-page-wrapper {
     background-color: #ffffff;
 }
-.rcw-widget-container {
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  margin: 0 20px 20px 0;
-  position: absolute;
-  right: 40px;
-  z-index: 9999;
-}
 
-.rcw-widget-container > .rcw-launcher > img.rcw-open-launcher {
-  content: url(/src/assets/chatbot_logo.png);
-  width: 47px;
-  height: 47px;
-  right: 7px;
-  display: block;
-  position: absolute;
-  bottom: 7px;
-}
-.rcw-widget-container > .rcw-launcher > img.rcw-close-launcher {
-  right: 20px;
-  display: block;
-  position: absolute;
+.chat-container {
+  position: fixed;
   bottom: 20px;
-}
-.rcw-send {
-  position: absolute;
   right: 20px;
-  bottom: 10px;
-}
-.rcw-new-message {
+  width: 300px; /* Adjust as necessary */
+  height: 400px; /* Adjust as necessary */
   background-color: #fff;
-  border: 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px 5px;
-  resize: none;
-  width: calc(100% - 105px);
-  position: absolute;
-  right: 60px;
-  bottom: 2.5px;
-}
-
-.rcw-conversation-container .rcw-header {
-  background-color: #191970;
-  border-radius: 10px 10px 0 0;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 0px;
-}
-.rcw-launcher {
-  -webkit-animation-delay: 0;
-  -webkit-animation-duration: .5s;
-  -webkit-animation-name: slide-in;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-delay: 0;
-  -moz-animation-duration: .5s;
-  -moz-animation-name: slide-in;
-  -moz-animation-fill-mode: forwards;
-  animation-delay: 0;
-  animation-duration: .5s;
-  animation-name: slide-in;
-  animation-fill-mode: forwards;
-  align-self: flex-end;
-  background-color: #191970;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: 0 2px 10px 1px #b5b5b5;
-  height: 60px;
-  margin-top: 10px;
-  cursor: pointer;
-  width: 60px;
-}
-.rcw-conversation-container .avatar {
-  width: 56px;
-  height: 50px;
-  border-radius: 100%;
-  margin-right: 10px;
-  vertical-align: middle;
-  position: absolute;
-  left: 40px;
-  top: 6px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other elements */
 }
