@@ -1,54 +1,55 @@
 import { useEffect, useState } from 'react';
-import { getPlacesData } from '../api/app';
-import Chat from '../components/chat_card';
+import { getPlacesData, getWeatherData } from '../api/app';
 import Map from '../components/Map';
 import Navbar from '../components/Navbar';
 import List from '../components/Tofind';
-import './home.css';
+
 
 const Home = () => {
   const [coords, setCoords] = useState({});
-
-
   const [bounds, setBounds] = useState(null);
   const [places, setPlaces] = useState([]);
+  const [weatherData,setWeatherData]=useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [type, setType] = useState('restaurants');
-  const [rating, setRating] = useState('All');
+  const [type,setType]=useState("restaurants");
+  const [rating,setRating]=useState('All');
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [searchInput, setSearchInput] = useState('');
- 
+
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+      navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
       setCoords({ lat: latitude, lng: longitude });
     });
-  },[]);
+  }, []);
 
   useEffect(() => {
     const filtered = places.filter((place) => Number(place.rating) > rating);
+
     setFilteredPlaces(filtered);
-  }, [rating]);
-
-
-  useEffect(() => {
-    console.log('coords,bounds', coords, bounds);
-    setIsLoading(true);
-    if (bounds) {
-      getPlacesData(type, bounds.sw, bounds.ne)
-        .then((data) => {
-          setPlaces(data);
-          setFilteredPlaces([]);
-          setRating('');
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setIsLoading(false);
-        });
-    }
-  }, [type, bounds]);
+  },[rating]);
   
-  const handlePlaceChanged = async () => {
+  const handle_VisitClick = async (place_Id) => {
+    console.log("visited home:",place_Id);
+    try{
+    const response = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?place_id=${place_Id}&key=AIzaSyCp-bjbm99Gd3LzoYzPFKB-bFpP0NjCypU`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    console.log("Data: ${Data}");
+    if (data.results.length > 0) {
+      const { lat, lng } = data.results[0].geometry.location;
+      setCoords({ lat, lng });
+    } else {
+      throw new Error('Place not found');
+    }
+  } catch (error) {
+    console.error('Error fetching geolocation:', error);
+  }
+  };
+
+  const handlePlaceChanged = async() => {
     try {
       console.log('Search input:', searchInput);
       const response = await fetch(
@@ -67,54 +68,58 @@ const Home = () => {
     } catch (error) {
       console.error('Error fetching geolocation:', error);
     }
+   
   };
-
   useEffect(() => {
-    console.log('coords,bounds', coords, bounds);
-    setIsLoading(true);
-    if (bounds) {
-      getPlacesData(type, bounds.sw, bounds.ne)
-        .then((data) => {
-          setPlaces(data);
-          setFilteredPlaces([]);
-          setRating('');
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setIsLoading(false);
-        });
+    console.log('coords,bounds',coords,bounds);
+    setIsLoading(true)
+    if(bounds){ 
+    
+    getWeatherData(coords.lat, coords.lng)
+      .then((data) => setWeatherData(data));
+    
+    getPlacesData(type,bounds.sw,bounds.ne)
+      .then((data) => {
+        setPlaces(data)
+        setFilteredPlaces([]);
+        setRating('');
+        setIsLoading(false);
+      }).catch((error) => {
+        console.error("Error fetching data:", error);
+      })
     }
-  }, [type, bounds]);
-
-   // Function to get the current position of the user
-
-   return (
-    <div className='h-screen w-screen'>
-      <div>
-        <Navbar handlePlaceChanged={handlePlaceChanged} setSearchInput={setSearchInput} searchInput={searchInput}/>
-      </div>
-      <div className='mt-0.5 flex flex-row justify-between'>
-        <List 
-          isLoading={isLoading}
-          places={filteredPlaces.length ? filteredPlaces : places}
-          type={type}
-          setType={setType}
-          rating={rating}
-          setRating={setRating}/>
-        {coords && <Map 
-          setCoords={setCoords}
-          setBounds={setBounds}
-          coords={coords}
-          places={places}/>}
-      </div>
-
-      <div className='content'>
-        {/* Other content */}
-        <Chat />
-      </div>
-    </div>  
-  );
+  },[type,bounds]);
+  
+  
+    return (
+        <div className='h-screen w-screen overflow-hidden'>
+            <div>
+                <Navbar handlePlaceChanged={handlePlaceChanged} setSearchInput={setSearchInput} searchInput={searchInput}/>
+            </div>
+            <div>
+            </div>  
+            <div className='mt-0.5 flex flex-row justify-between'>
+              <List 
+                isLoading={isLoading}
+                places={filteredPlaces.length ? filteredPlaces : places}
+                type={type}
+                setType={setType}
+                rating={rating}
+                setRating={setRating}
+                style={{width: '30%'}}/>
+              {coords && <Map 
+                setCoords={setCoords}
+                setBounds={setBounds}
+                coords={coords}
+                places={places}
+                weatherData={weatherData} style={{width: '70%'}}
+                handlevisit={handle_VisitClick}/>}
+            </div>
+            <div>
+              
+            </div>
+        </div>  
+    );
 }
 
-export default Home; 
+export default Home;

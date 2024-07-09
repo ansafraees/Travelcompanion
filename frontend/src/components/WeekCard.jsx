@@ -14,7 +14,7 @@ const Week = ({ itinerary }) => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', width:'85vh', alignContent:"center",justifyContent:'center'}}>
+        <div className="w-10/12 " style={{ display: 'flex', flexDirection: 'column',alignContent:"center",justifyContent:'center'}}>
             <div style={{display: 'flex', flexDirection: 'row',justifyContent:'space-between',marginBottom:10}}>
                 {Object.entries(itinerary).map(([index, details]) => (
                     <Paper 
@@ -24,10 +24,11 @@ const Week = ({ itinerary }) => {
                         cursor: 'pointer' 
                     }} 
                     elevation={3} 
+                    onClick={() => handleDayClick(index,details )}
                     key={index}
                 >
-                    <Box p={1}>
-                        <Typography gutterBottom variant="h5" onClick={() => handleDayClick(index,details )}>
+                    <Box p={1} className="p-5 bg-slate-950 flex flex-row justify-center items-center rounded hover:bg-zinc-500">
+                        <Typography gutterBottom variant="h5"style={{ color: 'white' }} >
                             Day {parseInt(index) + 1}
                         </Typography>
                     </Box>

@@ -89,3 +89,165 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+- story: get weather with city
+  steps:
+    - user: |
+        Can you tell me the weather in Paris?
+      intent: get_weather
+      entities:
+        - location: "Paris"
+    - action: action_weather
+    - action: action_restart
+
+- story: ask for weather without current location
+  steps:
+    - user: |
+        What's the weather like today?
+      intent: ask_weather
+    - action: utter_ask_location_weather
+    - user: |
+        No, I don't want to share my current location.
+      intent: deny
+    - action: utter_get_city_name
+    - user: |
+        I want to know the weather in London.
+      intent: inform
+      entities:
+        - location: "London"
+    - action: action_weather
+    - action: action_restart
+
+- story: ask for weather with current location
+  steps:
+    - user: |
+        What's the weather like today?
+      intent: ask_weather
+    - action: utter_ask_location_weather
+    - user: |
+        yes, I want to use my current location.
+      intent: affirm
+    - action: action_weather
+    - action: action_restart
+
+
+- story: get restaurant with city
+  steps:
+    - user: |
+        Find me a restaurant in Pattambi.
+      intent: get_restaurant
+      entities:
+        - location: "Pattambi"
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: ask for restaurant without current location
+  steps:
+    - user: |
+        Can you find me a restaurant?
+      intent: ask_restaurant
+    - action: utter_ask_location_restaurant
+    - user: |
+        No, I don't want to share my current location.
+      intent: deny
+    - action: utter_get_city_name_restaurant
+    - user: |
+        I want to find a restaurant in Paris.
+      intent: inform
+      entities:
+        - location: "Paris"
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: ask for restaurant with current location
+  steps:
+    - user: |
+        Can you find me a restaurant?
+      intent: ask_restaurant
+    - action: utter_ask_location_restaurant
+    - user: |
+        Yes, use my current location.
+      intent: affirm
+    - action: action_search_restaurants
+    - action: action_restart
+
+- story: get hotel with city
+  steps:
+    - user: |
+        Find me a hotel in Pattambi.
+      intent: get_hotel
+      entities:
+        - location: "Pattambi"
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: ask for hotel without current location
+  steps:
+    - user: |
+        Can you find me a hotel?
+      intent: ask_hotel
+    - action: utter_ask_location_hotel
+    - user: |
+        No, I don't want to share my current location.
+      intent: deny
+    - action: utter_get_city_name_hotel
+    - user: |
+        I want to find a hotel in Paris.
+      intent: inform
+      entities:
+        - location: "Paris"
+    - action: action_search_hotels
+    - action: action_restart
+
+- story: ask for hotel with current location
+  steps:
+    - user: |
+        Can you find me a hotel?
+      intent: ask_hotel
+    - action: utter_ask_location_hotel
+    - user: |
+        Yes, use my current location.
+      intent: affirm
+    - action: action_search_hotels
+    - action: action_restart
+
+
+- story: get attraction with city
+  steps:
+    - user: |
+        Find me an attraction in Pattambi.
+      intent: get_attraction
+      entities:
+        - location: "Pattambi"
+    - action: action_search_attractions
+    - action: action_restart
+
+- story: ask for attraction without current location
+  steps:
+    - user: |
+        Can you find me an attraction?
+      intent: ask_attraction
+    - action: utter_ask_location_attraction
+    - user: |
+        No, I don't want to share my current location.
+      intent: deny
+    - action: utter_get_city_name_attraction
+    - user: |
+        I want to find an attraction in Paris.
+      intent: inform
+      entities:
+        - location: "Paris"
+    - action: action_search_attractions
+    - action: action_restart
+
+- story: ask for attraction with current location
+  steps:
+    - user: |
+        Can you find me an attraction?
+      intent: ask_attraction
+    - action: utter_ask_location_attraction
+    - user: |
+        Yes, use my current location.
+      intent: affirm
+    - action: action_search_attractions
+    - action: action_restart

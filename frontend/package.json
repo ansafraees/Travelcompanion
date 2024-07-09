@@ -21,12 +21,11 @@
     "notistack": "^3.0.1",
     "react": "^18.3.1",
     "react-burger-menu": "^3.0.9",
-    "react-chat-widget": "^3.1.4",
     "react-dom": "^18.3.1",
     "react-google-autocomplete": "^2.7.3",
-    "react-router-dom": "^6.22.3",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.24.1",
     "react-scripts": "^5.0.1",
-    "socket.io-client": "^4.7.5",
     "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {

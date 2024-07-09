@@ -51,3 +51,14 @@ rules:
   - intent: inform
   - action: utter_default
   - action: action_restart
+
+- rule: to handle out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_default
+  - action: action_restart
+
+- rule: to not star conversion for default
+  steps:
+  - action: utter_default
+  - action: action_restart

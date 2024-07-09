@@ -3,14 +3,18 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 
 const PlaceCard = ({ place}) => {
+  if (!place) return null;
   return (
     <Card elevation={6}>
-      <CardMedia
-        style={{ height: 350 ,width:500}}
-        image={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
-        title={place.name}
-      />
-      <CardContent>
+      <div className="flex justify-center">
+        <CardMedia
+          component="img"
+          className="h-[368px] w-[256px] object-cover object-center"
+          image={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
+          title={place.name}
+        />
+      </div>
+      <CardContent className="bg-gray-200">
         <Typography gutterBottom variant="h5">{place.name}</Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
           <Rating name="read-only" value={Number(place.rating)} readOnly />

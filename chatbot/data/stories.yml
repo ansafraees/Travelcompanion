@@ -28,7 +28,7 @@ stories:
   steps:
   - intent: get_weather
     entities:
-     - location: "Pattambi"
+     - location: "city"
   - action: action_weather
   - action: action_restart
 
@@ -172,7 +172,7 @@ stories:
   steps:
   - intent: get_attraction
     entities:
-     - location: "Pattambi"
+     - location: "city"
   - action: action_search_attractions
   - action: action_restart
 
@@ -183,7 +183,7 @@ stories:
     - action: utter_get_city_name_attraction
     - intent: inform
       entities:
-        - location: city
+        - location: "city"
     - action: action_search_attractions
     - action: action_restart
 
@@ -213,3 +213,4 @@ stories:
     - intent: affirm
     - action: action_search_attractions
     - action: action_restart
+

@@ -6,7 +6,7 @@ const TripCard = ({ time, details}) => {
     console.log('TripCard:', time, details)
     if(time==8 || time==14 || time==20) return (
         <Card elevation={6}>
-            <CardContent>
+            <CardContent className="bg-gray-300">
             <Typography gutterBottom variant="h5">
                 {time == 8 ? 'Breakfast' : time == 14 ? 'Lunch' : 'Dinner'} at {time}:00</Typography>
                 <Typography gutterBottom variant="h5">{details.name}</Typography>
@@ -24,7 +24,7 @@ const TripCard = ({ time, details}) => {
     );
     else return(
         <div style={{margin:2}}>
-            <Typography gutterBottom variant="h5">At {time}:00</Typography>
+            <Typography className="text-white" gutterBottom variant="h5">At {time}:00</Typography>
             <PlaceCard place={details} />
         </div>
     )

@@ -3,16 +3,4 @@
     background-color: #ffffff;
 }
 
-.chat-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px; /* Adjust as necessary */
-  height: 400px; /* Adjust as necessary */
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure it appears above other elements */
-}
+

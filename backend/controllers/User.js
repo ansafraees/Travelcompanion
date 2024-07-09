@@ -22,6 +22,12 @@ const userLogin=async(req,res)=>{
     }
 }
 
+const userLogout = (req, res) => {
+  res.cookie('token', '', { sameSite: 'none', secure: true, expires: new Date(0) })
+     .status(200)
+     .json({ message: 'Logged out successfully' });
+};
+
 const registerUser = async (req, res, next) => {
     console.log("entered")
     const { username, password } = req.body;
@@ -57,7 +63,7 @@ const places = async (req, res) => {
         tr_latitude: ne_lat,
       },
       headers: {
-        'X-RapidAPI-Key': '40f30c1ac8msh837632ac22245dbp184beajsn7e0a586d2d7a',
+        'X-RapidAPI-Key': '5f3fd2e74amshb6b24d94c61bb58p19ce95jsn23b94478dfe5',
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
       },
     });
@@ -137,7 +143,7 @@ const getLocationData=async(req,res)=>{
     const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-by-latlng`, {
       params: { latitude: lat, longitude: lng },
       headers: {
-        'x-rapidapi-key': '40f30c1ac8msh837632ac22245dbp184beajsn7e0a586d2d7a',
+        'x-rapidapi-key': '5f3fd2e74amshb6b24d94c61bb58p19ce95jsn23b94478dfe5',
         'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
       },
     });
@@ -148,4 +154,4 @@ const getLocationData=async(req,res)=>{
 
 }
 
-module.exports={registerUser,userLogin,places,weather,trip,getRestaurants,getLocationData}
+module.exports={registerUser,userLogin,places,weather,trip,getRestaurants,getLocationData,userLogout}

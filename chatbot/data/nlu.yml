@@ -374,46 +374,46 @@ nlu:
 
 - intent: ask_weather
   examples: |
-      - I want the weather
-      - Can you give me the weather?
-      - Tell me the weather
-      - Get weather information
-      - Weather forecast please
-      - What's the weather like?
-      - I need the weather update
-      - Could you tell me the weather?
-      - What's the forecast?
-      - What's the weather report?
-      - How's the weather today?
-      - Can you check the weather for me?
-      - Let me know the weather
-      - What does the weather look like?
-      - What's the temperature outside?
-      - Is it going to rain today?
-      - Do I need an umbrella today?
-      - What's the weather going to be like tomorrow?
-      - Will it be sunny today?
-      - How hot is it right now?
-      - What's the weather prediction?
-      - How's the weather looking?
-      - What's the weather update for today?
-      - Is there a weather alert?
-      - Can you tell me the weather forecast for this weekend?
-      - What's the weather for this afternoon?
-      - Can you give me today's weather report?
-      - What should I expect from the weather today?
-      - How's the weather this morning?
-      - Will it snow today?
-      - How windy is it outside?
-      - Is it cloudy right now?
-      - Give me the current weather conditions
-      - What's the weather outlook for this evening?
-      - What's the weather going to be like this week?
-      - Can you tell me if it's going to be cold tomorrow?
-      - What's the weather like ?
-      - Is there any chance of thunderstorms today?
-      - How's the weather shaping up for the day?
-      - Will there be any rain this week?
+    - I want the weather
+    - Can you give me the weather?
+    - Tell me the weather
+    - Get weather information
+    - Weather forecast please
+    - What's the weather like?
+    - I need the weather update
+    - Could you tell me the weather?
+    - What's the forecast?
+    - What's the weather report?
+    - How's the weather today?
+    - Can you check the weather for me?
+    - Let me know the weather
+    - What does the weather look like?
+    - What's the temperature outside?
+    - Is it going to rain today?
+    - Do I need an umbrella today?
+    - What's the weather going to be like tomorrow?
+    - Will it be sunny today?
+    - How hot is it right now?
+    - What's the weather prediction?
+    - How's the weather looking?
+    - What's the weather update for today?
+    - Is there a weather alert?
+    - Can you tell me the weather forecast for this weekend?
+    - What's the weather for this afternoon?
+    - Can you give me today's weather report?
+    - What should I expect from the weather today?
+    - How's the weather this morning?
+    - Will it snow today?
+    - How windy is it outside?
+    - Is it cloudy right now?
+    - Give me the current weather conditions
+    - What's the weather outlook for this evening?
+    - What's the weather going to be like this week?
+    - Can you tell me if it's going to be cold tomorrow?
+    - What's the weather like?
+    - Is there any chance of thunderstorms today?
+    - How's the weather shaping up for the day?
+    - Will there be any rain this week?
 
 - intent: ask_restaurant
   examples: |
@@ -459,31 +459,621 @@ nlu:
 
 - intent: ask_attraction
   examples: |
-      - I'm looking for a attraction
-      - Find attractions?
-      - Search for tourist attraction
-      - Recommend some attractions?
+    - I'm looking for an attraction
+    - Find attractions?
+    - Search for a tourist attraction
+    - Recommend some attractions?
+    - Can you help me find attractions?
+    - I need to find places to visit
+    - Suggest tourist spots, please
+    - Where can I go for sightseeing?
+    - Show me tourist attractions
+    - Any recommendations for attractions?
+    - Help me locate attractions
+    - Looking for places to visit
+    - Find me some tourist spots
+    - Need attractions to visit
+    - What are the best attractions around?
+    - Can you recommend any tourist spots?
+    - Suggest a place to visit
+    - Help me find tourist destinations
+    - Looking for sightseeing options
+    - Where can I find attractions?
+    - I need to visit some attractions
+    - Any good places to visit nearby?
+    - Show me some places to see
+    - Where should I go sightseeing?
+    - I need attraction recommendations
+    - Find good attractions for me
+    - Suggest places of interest
+    - Looking for interesting places to visit
+    - Help me choose an attraction
+    - Can you find me a tourist spot?
+    - Where to go for sightseeing?
+    - Locate attractions for me
+    - Find a place to visit
+    - Need suggestions for tourist spots
+    - Recommend a place of interest
+    - Find tourist attractions for me
+    - What attractions are available?
+    - Can you search for attractions?
+    - Any attraction recommendations?
+    - Suggest some tourist spots
+    - Find a landmark for me
+    - I need a place to visit
+    - Show me available attractions
+    - Help me find an attraction
+    - Need a place to go sightseeing
+    - What are the nearby attractions?
+    - Can you locate attractions for me?
+    - Find attractions for my visit
+    - Recommend places to see
+    - I need to find tourist spots
+    - What are some good attractions?
+    - Where can I go for a visit?
+    - Suggest places to see
+    - Can you help me find places to visit?
+    - I need an attraction to visit
+    - Find a spot for me to visit
+    - Show me where I can go sightseeing
+    - Help me find interesting places
+    - What attractions do you recommend?
+    - Locate places of interest for me
+    - Recommend a sightseeing spot
+    - Need an attraction recommendation
+    - Where should I visit?
+    - Find a good place to visit
+    - Show me attraction options
+    - Any good attraction suggestions?
+    - I need places to visit
+    - Can you find a tourist attraction for me?
+    - Where can I find places of interest?
+    - Help me search for attractions
+    - What are the best places to visit?
+    - Show me a list of attractions
+    - Find a suitable place to visit
+    - Suggest sightseeing spots
+    - Need help finding attractions
+    - Recommend a good place to see
+    - Where can I go for a tourist spot?
+    - Find a nearby attraction
+    - Can you locate places to visit?
+    - Suggest some places to go
+    - What are the best tourist spots?
+    - I need help finding attractions
+    - Show me some tourist places
+    - Can you recommend a place to visit?
+    - Locate a place of interest
+    - Find a place to go
+    - Help me find an interesting place
+    - Where can I book a tour?
+    - Suggest a good place to visit
+    - I need places to go for sightseeing
+    - Show me some landmarks
+    - What are the nearby tourist spots?
+    - Find a place of interest
+    - Recommend a nearby attraction
+    - Help me find a good attraction
+    - Can you recommend tourist destinations?
+    - Where can I find a good place to visit?
+    - Locate a good attraction
+    - Find an attraction for me
+    - Show me some places to visit
+
 
 - intent: ask_hotel
   examples: |
-      - I'm looking for a hotel
-      - Find hotel?
-      - Search for a stay
-      - Recommend some hotels?
+    - I'm looking for a hotel
+    - Find hotel?
+    - Search for a stay
+    - Recommend some hotels?
+    - Can you help me find a hotel?
+    - I need a place to stay
+    - Suggest hotels, please
+    - Where can I book a hotel?
+    - Show me hotel options
+    - Any recommendations for hotels?
+    - Help me locate a hotel
+    - Looking for hotel suggestions
+    - Find me a place to stay
+    - Need a hotel for tonight
+    - What are the best hotels around?
+    - Can you recommend a good hotel?
+    - Suggest a place to stay
+    - Help me find accommodation
+    - Looking for lodging
+    - Where can I find a hotel?
+    - I need to book a hotel room
+    - Any good places to stay nearby?
+    - Show me some hotels
+    - Where should I stay?
+    - I need hotel recommendations
+    - Find a good hotel for me
+    - Suggest accommodations
+    - Looking for a good place to stay
+    - Help me choose a hotel
+    - Can you find me a hotel?
+    - Where to stay?
+    - Locate a hotel for me
+    - Find a place to stay overnight
+    - Need suggestions for hotels
+    - Recommend a place to stay
+    - Find lodging for me
+    - What hotels are available?
+    - Can you search for a hotel?
+    - Any hotel recommendations?
+    - Suggest some accommodations
+    - Find an inn for me
+    - I need a room to stay
+    - Show me available hotels
+    - Help me book a hotel
+    - Need a place to stay the night
+    - What are the nearby hotels?
+    - Can you locate a hotel for me?
+    - Find a hotel for my stay
+    - Recommend places to stay
+    - I need to find a hotel
+    - What are some good hotels?
+    - Where can I stay overnight?
+    - Suggest hotels in the area
+    - Can you help me book a hotel?
+    - I need a hotel booking
+    - Find a room for me
+    - Show me where I can stay
+    - Help me find a lodging place
+    - What hotels do you recommend?
+    - Locate accommodations for me
+    - Recommend an inn
+    - Need a hotel recommendation
+    - Where should I book a hotel?
+    - Find a good place to stay
+    - Show me hotel options
+    - Any good hotel suggestions?
+    - I need a place to sleep
+    - Can you find a hotel room for me?
+    - Where can I find accommodations?
+    - Help me search for a hotel
+    - What are the best places to stay?
+    - Show me a list of hotels
+    - Find a suitable hotel
+    - Suggest lodging places
+    - Need help finding a hotel
+    - Recommend a good inn
+    - Where can I get a hotel room?
+    - Find a hotel nearby
+    - Can you locate accommodations?
+    - Suggest some places to stay
+    - What are the best hotel options?
+    - I need help finding a hotel
+    - Show me some places to stay
+    - Can you recommend a place to stay?
+    - Locate a place to stay overnight
+    - Find a nearby hotel
+    - Help me find a hotel room
+    - Where can I book accommodations?
+    - Suggest a good hotel
+    - I need a place to stay tonight
+    - Show me some inns
+    - What are the nearby lodging options?
+    - Find a place to sleep
+    - Recommend a nearby hotel
+    - Help me find a good hotel
+    - Can you recommend accommodations?
+    - Where can I find a good hotel?
+    - Locate a good place to stay
+    - Find a hotel for me
+    - Show me some lodging options
+
 
 - intent: get_hotel
   examples: |
-      - Find hotels in [Kochi](location)
-      - fetch me hotel in [Paris](location)
-      - hotel [Delhi](location)
-      - I am looking for hotels in [Tokyo](location)
+    - Find hotels in [Kochi](location)
+    - Fetch me hotel in [Paris](location)
+    - Hotel [Delhi](location)
+    - I am looking for hotels in [Tokyo](location)
+    - Can you find a hotel in [Mumbai](location)?
+    - Show me hotels in [Chennai](location)
+    - Where can I stay in [Bengaluru](location)?
+    - Recommend hotels in [Hyderabad](location)
+    - I need a hotel in [Ahmedabad](location)
+    - List hotels in [Jaipur](location)
+    - Find me a hotel in [Pune](location)
+    - Look up hotels in [Goa](location)
+    - Where can I book a hotel in [Kolkata](location)?
+    - Get me hotels in [Lucknow](location)
+    - Hotels available in [Chandigarh](location)
+    - Any good hotels in [Amritsar](location)?
+    - Locate a hotel in [Udaipur](location)
+    - Show hotels in [Shimla](location)
+    - I need hotels in [Darjeeling](location)
+    - Find places to stay in [Varanasi](location)
+    - What are the hotels in [Rishikesh](location)?
+    - Help me find a hotel in [Leh](location)
+    - Recommend places to stay in [Mysuru](location)
+    - Look for hotels in [Ooty](location)
+    - Best hotels in [Bhopal](location)
+    - Search for hotels in [Nagpur](location)
+    - Find me a hotel in [Aurangabad](location)
+    - Get hotels in [Patna](location)
+    - Any hotels in [Ranchi](location)?
+    - Book a hotel in [Raipur](location)
+    - Where to stay in [Guwahati](location)?
+    - Hotels in [Gangtok](location)
+    - Find a hotel in [Bhubaneswar](location)
+    - Recommend a hotel in [Thiruvananthapuram](location)
+    - Show me hotels in [Munnar](location)
+    - Hotels in [Alleppey](location)
+    - Where to stay in [Kozhikode](location)?
+    - Find hotels in [Varkala](location)
+    - Book a hotel in [Kannur](location)
+    - Hotels available in [Wayanad](location)
+    - Best places to stay in [Thekkady](location)
+    - List hotels in [Kumarakom](location)
+    - Hotels in [Thrissur](location)
+    - Where can I find hotels in [Kottayam](location)?
+    - Recommend hotels in [Palakkad](location)
+    - Show hotels in [Kollam](location)
+    - I need a hotel in [Kasargod](location)
+    - Look up hotels in [Pathanamthitta](location)
+    - Any good hotels in [Idukki](location)?
+    - Find hotels in [Ernakulam](location)
+    - Locate a hotel in [Malappuram](location)
+    - Show hotels in [Cherthala](location)
+    - Find a place to stay in [Haripad](location)
+    - Best hotels in [Kayamkulam](location)
+    - Recommend hotels in [Mavelikkara](location)
+    - Book a hotel in [Changanassery](location)
+    - Hotels in [Pala](location)
+    - Look up hotels in [Vaikom](location)
+    - Find hotels in [Ettumanoor](location)
+    - Where to stay in [Kanjirappally](location)?
+    - Recommend hotels in [Adoor](location)
+    - Best places to stay in [Kuttanad](location)
+    - Locate hotels in [Pathiramanal](location)
+    - Show me hotels in [Nedumudi](location)
+    - Find a hotel in [Thiruvalla](location)
+    - Book a place in [Alappuzha](location)
+    - Any hotels in [Kumarakom](location)?
+    - Recommend hotels in [Mararikulam](location)
+    - Look up hotels in [Aranmula](location)
+    - Where to stay in [Mallappally](location)?
+    - Find hotels in [Ranni](location)
+    - Show hotels in [Kadammanitta](location)
+    - Best hotels in [Pandalam](location)
+    - Locate a hotel in [Ambalapuzha](location)
+    - Recommend hotels in [Mannar](location)
+    - Find a hotel in [Cherthala](location)
+    - Show hotels in [Chettikulangara](location)
+    - Book a hotel in [Eramalloor](location)
+    - Hotels in [Aroor](location)
+    - Look up hotels in [Thakazhy](location)
+    - Where to stay in [Ambalappuzha](location)?
+    - Find a hotel in [Cherthala](location)
+    - Recommend hotels in [Champakulam](location)
+    - Best hotels in [Mannancherry](location)
+    - Locate a hotel in [Edathua](location)
+    - Show hotels in [Vechoor](location)
+    - Book a hotel in [Chengannur](location)
+    - Hotels in [Chengannur](location)
+    - Look up hotels in [Punnapra](location)
+    - Where to stay in [Thalayolaparambu](location)?
+    - Find a hotel in [Maradu](location)
+    - Recommend hotels in [Kalavoor](location)
+    - Best hotels in [Karthikappally](location)
+    - Locate a hotel in [Muhamma](location)
+    - Show hotels in [Muthukulam](location)
+    - Book a hotel in [Nangiarkulangara](location)
+    - Hotels in [Peringara](location)
+    - Look up hotels in [Pallippad](location)
+    - Where to stay in [Thanneermukkom](location)?
+    - Find a hotel in [Pullukulangara](location)
+    - Recommend hotels in [Thalavady](location)
+    - Best hotels in [Veliyanad](location)
+    - Locate a hotel in [Cherukunnam](location)
+    - Show hotels in [Edappally](location)
+    - Book a hotel in [Vyttila](location)
+    - Hotels in [Kaloor](location)
+    - Look up hotels in [Kakkanad](location)
+    - Where to stay in [Aluva](location)?
+    - Find a hotel in [Perumbavoor](location)
+    - Recommend hotels in [Paravur](location)
+    - Best hotels in [Angamaly](location)
+    - Locate a hotel in [Muvattupuzha](location)
+    - Show hotels in [Thodupuzha](location)
+    - Book a hotel in [Piravom](location)
+    - Hotels in [Erattupetta](location)
+    - Look up hotels in [Perumbavoor](location)
+    - Where to stay in [Kothamangalam](location)?
+    - Find a hotel in [Pala](location)
+    - Recommend hotels in [Chottanikkara](location)
+    - Best hotels in [Mulanthuruthy](location)
+    - Locate a hotel in [Tripunithura](location)
+    - Show hotels in [Kumbalam](location)
+    - Book a hotel in [Kadavanthra](location)
+    - Hotels in [Panampilly Nagar](location)
+    - Look up hotels in [Kochi](location)
+    - Where to stay in [Fort Kochi](location)?
+    - Find a hotel in [Mattancherry](location)
+    - Recommend hotels in [Edakochi](location)
+    - Best hotels in [Thevara](location)
+    - Locate a hotel in [Palluruthy](location)
+    - Show hotels in [Willingdon Island](location)
+    - Book a hotel in [Vypeen](location)
+    - Hotels in [Alappuzha](location)
+    - Look up hotels in [Kottayam](location)
+    - Where to stay in [Thiruvananthapuram](location)?
+    - Find a hotel in [Kollam](location)
+    - Recommend hotels in [Thrissur](location)
+    - Best hotels in [Palakkad](location)
+    - Locate a hotel in [Kozhikode](location)
+    - Show hotels in [Kannur](location)
+    - Book a hotel in [Kasargod](location)
+    - Hotels in [Malappuram](location)
+    - Look up hotels in [Pathanamthitta](location)
+    - Where to stay in [Idukki](location)?
+    - Find a hotel in [Wayanad](location)
+    - Recommend hotels in [Kumarakom](location)
+    - Best hotels in [Varkala](location)
+    - Locate a hotel in [Kovalam](location)
+    - Show hotels in [Ponmudi](location)
+    - Book a hotel in [Meppadi](location)
+    - Hotels in [Edathala](location)
+    - Look up hotels in [Ernakulam](location)
+    - Where to stay in [Thodupuzha](location)?
+    - Find a hotel in [Maradu](location)
+    - Recommend hotels in [Cherthala](location)
+    - Best hotels in [Adoor](location)
+    - Locate a hotel in [Kalpetta](location)
+    - Show hotels in [Sultan Bathery](location)
+    - Book a hotel in [Mananthavady](location)
+    - Hotels in [Nedumangad](location)
+    - Look up hotels in [Attingal](location)
+    - Where to stay in [Varkala](location)?
+    - Find a hotel in [Thiruvananthapuram](location)
+    - Recommend hotels in [Kattappana](location)
+    - Best hotels in [Munnar](location)
+    - Locate a hotel in [Thekkady](location)
+    - Show hotels in [Kumily](location)
+    - Book a hotel in [Kattapana](location)
+    - Hotels in [Peermade](location)
+    - Look up hotels in [Vagamon](location)
+    - Where to stay in [Munnar](location)?
+    - Find a hotel in [Devikulam](location)
+    - Recommend hotels in [Adimali](location)
+    - Best hotels in [Nedumkandam](location)
+    - Locate a hotel in [Thodupuzha](location)
+    - Show hotels in [Kanjirappally](location)
+    - Book a hotel in [Erattupetta](location)
+    - Hotels in [Ponkunnam](location)
+    - Look up hotels in [Manimala](location)
+    - Where to stay in [Thiruvalla](location)?
+    - Find a hotel in [Pandalam](location)
+    - Recommend hotels in [Pathanamthitta](location)
+    - Best hotels in [Ranni](location)
+    - Locate a hotel in [Adoor](location)
+    - Show hotels in [Kozhencherry](location)
+    - Book a hotel in [Mallappally](location)
+    - Hotels in [Kadapra](location)
+    - Look up hotels in [Mavelikkara](location)
+    - Where to stay in [Chengannur](location)?
+    - Find a hotel in [Kuttanad](location)
+    - Recommend hotels in [Alappuzha](location)
+    - Best hotels in [Ambalappuzha](location)
+    - Locate a hotel in [Cherthala](location)
+    - Show hotels in [Kayamkulam](location)
+    - Book a hotel in [Haripad](location)
+    - Hotels in [Thakazhy](location)
+    - Look up hotels in [Arthunkal](location)
+    - Where to stay in [Punnapra](location)?
+    - Find a hotel in [Kalavoor](location)
+    - Recommend hotels in [Karthikappally](location)
+    - Best hotels in [Muthukulam](location)
+    - Locate a hotel in [Veliyanad](location)
+    - Show hotels in [Cherukunnam](location)
+    - Book a hotel in [Edathua](location)
+    - Hotels in [Changanassery](location)
+    - Look up hotels in [Thalayolaparambu](location)
+    - Where to stay in [Pala](location)?
+    - Find a hotel in [Vaikom](location)
+    - Recommend hotels in [Ettumanoor](location)
+    - Best hotels in [Kanjirappally](location)
+    - Locate a hotel in [Manarcad](location)
+    - Show hotels in [Erattupetta](location)
+    - Book a hotel in [Changanassery](location)
+    - Hotels in [Adoor](location)
+    - Look up hotels in [Pandalam](location)
+    - Where to stay in [Ranni](location)?
+    - Find a hotel in [Mallappally](location)
+    - Recommend hotels in [Mavelikkara](location)
+    - Best hotels in [Haripad](location)
+    - Locate a hotel in [Kayamkulam](location)
+    - Show hotels in [Karunagappally](location)
+    - Book a hotel in [Sasthamkotta](location)
+    - Hotels in [Punalur](location)
+    - Look up hotels in [Kottarakkara](location)
+    - Where to stay in [Pathanapuram](location)?
+    - Find a hotel in [Anchal](location)
+    - Recommend hotels in [Kollam](location)
+    - Best hotels in [Paravur](location)
+    - Locate a hotel in [Chavara](location)
+    - Show hotels in [Palluruthy](location)
+    - Book a hotel in [Kundara](location)
+    - Hotels in [Ochira](location)
+    - Look up hotels in [Kottiyam](location)
+    - Where to stay in [Mayyanad](location)?
+    - Find a hotel in [Varkala](location)
+    - Recommend hotels in [Kollam](location)
+    - Best hotels in [Kadakkal](location)
+    - Locate a hotel in [Paripally](location)
+    - Show hotels in [Sakthikulangara](location)
+    - Book a hotel in [Thangassery](location)
+    - Hotels in [Eravipuram](location)
+    - Look up hotels in [Chinnakkada](location)
+    - Where to stay in [Thiruvananthapuram](location)?
+    - Find a hotel in [Kovalam](location)
+    - Recommend hotels in [Nedumangad](location)
+    - Best hotels in [Attingal](location)
+    - Locate a hotel in [Varkala](location)
+    - Show hotels in [Ponmudi](location)
+    - Book a hotel in [Kattakada](location)
+    - Hotels in [Neyyattinkara](location)
+    - Look up hotels in [Vizhinjam](location)
+    - Where to stay in [Balaramapuram](location)?
+    - Find a hotel in [Kallambalam](location)
+    - Recommend hotels in [Parassala](location)
+    - Best hotels in [Thiruvananthapuram](location)
+    - Locate a hotel in [Mannanthala](location)
+    - Show hotels in [Kaniyapuram](location)
+    - Book a hotel in [Aruvikkara](location)
+    - Hotels in [Cherthala](location)
+    - Look up hotels in [Pathanamthitta](location)
+    - Where to stay in [Kottayam](location)?
+    - Find a hotel in [Kochi](location)
+    - Recommend hotels in [Palakkad](location)
+    - Best hotels in [Thrissur](location)
+    - Locate a hotel in [Malappuram](location)
+    - Show hotels in [Kozhikode](location)
+    - Book a hotel in [Kannur](location)
+    - Hotels in [Kasaragod](location)
+    - Look up hotels in [Wayanad](location)
+    - Where to stay in [Idukki](location)?
+
 
 - intent: get_attraction
   examples: |
-      - Find attraction in [Kochi](location)
-      - fetch me attractions in [Paris](location)
-      - attractions [Delhi](location)
-      - I am looking for tourist places in [Tokyo](location)
+    - Can you tell me about attractions in [New York](location)?
+    - What are the must-see places in [Rome](location)?
+    - Suggest some tourist spots in [London](location)
+    - Show me popular attractions in [Sydney](location)
+    - I need information on attractions in [Istanbul](location)
+    - Find me interesting places to visit in [Bangkok](location)
+    - List the top attractions in [Barcelona](location)
+    - I want to explore tourist spots in [San Francisco](location)
+    - Are there any good attractions in [Cape Town](location)?
+    - Recommend attractions in [Amsterdam](location)
+    - What should I visit in [Hong Kong](location)?
+    - Provide a list of attractions in [Dubai](location)
+    - Where should I go in [Singapore](location)?
+    - What's interesting to see in [Los Angeles](location)?
+    - Help me find attractions in [Mexico City](location)
+    - Discover attractions in [Toronto](location)
+    - Look up attractions in [Moscow](location)
+    - Can you suggest places to see in [Berlin](location)?
+    - What are some famous attractions in [Lisbon](location)?
+    - Get me attractions in [Mumbai](location)
+    - What are the best attractions in [Chicago](location)?
+    - I'm searching for attractions in [Buenos Aires](location)
+    - Highlight some attractions in [Seoul](location)
+    - Find tourist spots in [Vienna](location)
+    - Locate the top attractions in [Stockholm](location)
+    - What attractions are there in [Prague](location)?
+    - Recommend tourist sites in [Beijing](location)
+    - Share popular places in [Athens](location)
+    - Any good attractions in [Bangkok](location)?
+    - Where to visit in [Madrid](location)?
+    - Best places to see in [Rio de Janeiro](location)?
+    - Uncover attractions in [Venice](location)
+    - Tell me about attractions in [Edinburgh](location)
+    - List attractions in [Dublin](location)
+    - Give me attractions in [Oslo](location)
+    - Popular tourist places in [Florence](location)
+    - Find attractions in [Kuala Lumpur](location)
+    - What to see in [Munich](location)?
+    - Interesting places in [Warsaw](location)?
+    - Can you find attractions in [Lisbon](location)?
+    - What are the highlights in [Zurich](location)?
+    - Tell me the attractions in [Budapest](location)
+    - Where to go in [Seville](location)?
+    - Explore attractions in [Copenhagen](location)
+    - Top tourist spots in [Brussels](location)
+    - Places to see in [Vancouver](location)
+    - Must-visit attractions in [San Diego](location)
+    - What are the attractions in [Kyoto](location)?
+    - Check attractions in [Reykjavik](location)
+    - Tourist places to visit in [Helsinki](location)
+    - I want to see attractions in [Marrakech](location)
+    - Suggest attractions in [Nice](location)
+    - What to visit in [Porto](location)?
+    - Look up tourist spots in [Lima](location)
+    - Key attractions in [Manila](location)?
+    - Can you list attractions in [Jakarta](location)?
+    - Best tourist sites in [Salzburg](location)
+    - What are the sights in [Bratislava](location)?
+    - Show attractions in [Tallinn](location)
+    - Main attractions in [Ljubljana](location)?
+    - Must-see places in [Bogotá](location)?
+    - Famous attractions in [Istanbul](location)?
+    - Cool places to visit in [Ho Chi Minh City](location)?
+    - Discover tourist spots in [Bucharest](location)
+    - Tourist attractions in [Santiago](location)
+    - Popular spots in [Havana](location)?
+    - Sights to see in [Athens](location)?
+    - Find me attractions in [Kochi](location)
+    - What are the top attractions in [Thiruvananthapuram](location)?
+    - Show me tourist spots in [Munnar](location)
+    - Popular places in [Alleppey](location)
+    - What to see in [Kozhikode](location)?
+    - Can you tell me attractions in [Varkala](location)?
+    - Recommend places to visit in [Kannur](location)
+    - List attractions in [Wayanad](location)
+    - Find top sights in [Thekkady](location)
+    - Explore attractions in [Kumarakom](location)
+    - Tourist attractions in [Thrissur](location)
+    - What to visit in [Kottayam](location)?
+    - Best places to see in [Palakkad](location)?
+    - What are the must-see spots in [Kollam](location)?
+    - Discover attractions in [Kasargod](location)
+    - Locate attractions in [Pathanamthitta](location)
+    - Look up tourist places in [Idukki](location)
+    - Famous spots in [Ernakulam](location)
+    - Show me the sights in [Malappuram](location)
+    - What are the highlights in [Chennai](location)?
+    - Tourist spots in [Hyderabad](location)
+    - Key attractions in [Bengaluru](location)?
+    - Must-visit places in [Ahmedabad](location)
+    - Attractions to see in [Jaipur](location)
+    - Explore tourist spots in [Pune](location)
+    - Find places in [Goa](location) to visit
+    - Top attractions in [Amritsar](location)
+    - Discover places in [Udaipur](location)
+    - What to see in [Chandigarh](location)?
+    - Best tourist sites in [Rishikesh](location)
+    - Must-see places in [Varanasi](location)
+    - Locate top attractions in [Agra](location)
+    - What to visit in [Shimla](location)?
+    - Popular tourist spots in [Darjeeling](location)
+    - Share attractions in [Leh](location)
+    - Key places to see in [Mysuru](location)
+    - What are the highlights in [Ooty](location)?
+    - List the sights in [Bhopal](location)
+    - Discover attractions in [Aurangabad](location)
+    - Show me popular places in [Nagpur](location)
+    - Find attractions in [Cherthala](location)
+    - Tourist spots in [Haripad](location)
+    - What to see in [Kayamkulam](location)?
+    - Must-visit places in [Mavelikkara](location)
+    - Discover attractions in [Changanassery](location)
+    - Show me places to see in [Pala](location)
+    - Top tourist sites in [Vaikom](location)
+    - Famous attractions in [Ettumanoor](location)
+    - Best places to visit in [Kanjirappally](location)
+    - Explore attractions in [Adoor](location)
+    - Key sights in [Kuttanad](location)
+    - What to see in [Pathiramanal](location)?
+    - Find tourist spots in [Nedumudi](location)
+    - Locate attractions in [Thiruvalla](location)
+    - Share tourist places in [Alappuzha](location)
+    - Recommend spots in [Kumarakom](location)
+    - What to visit in [Mararikulam](location)?
+    - Must-see places in [Aranmula](location)
+    - List attractions in [Mallappally](location)
+    - Top places to see in [Ranni](location)
+    - Tourist attractions in [Kadammanitta](location)
+    - What are the sights in [Pandalam](location)?
+    - Find me attractions in [Ambalapuzha](location)
+    - Popular spots in [Mannar](location)
+    - Where to visit in [Alleppey](location)?
+
 
 - intent: get_restaurant
   examples: |
@@ -655,3 +1245,61 @@ nlu:
       - I need a place to eat in [Inverness](location)
       - Suggest a dining place in [Stirling](location)
       - Where can I find good food in [Perth](location)
+
+- intent: out_of_scope
+  examples: |
+    - Who won the latest football match?
+    - What time does the movie start?
+    - How do I get to the nearest hospital?
+    - What is the latest news?
+    - Can you book a flight for me?
+    - How do I apply for a visa?
+    - What's the best way to invest money?
+    - Tell me a joke.
+    - What's your favorite color?
+    - How do I fix my computer?
+    - Can you help me with my homework?
+    - Who is the president of the United States?
+    - What is the capital of France?
+    - Can you play music for me?
+    - What's the stock price of Apple?
+    - How do I bake a cake?
+    - Can you translate this sentence to Spanish?
+    - What is the meaning of life?
+    - How far is the moon from Earth?
+    - Can you give me a recipe for lasagna?
+    - What time is it in Tokyo?
+    - Who wrote "To Kill a Mockingbird"?
+    - What's the score of the basketball game?
+    - How do I cancel my subscription?
+    - Can you send an email for me?
+    - What's the latest fashion trend?
+    - How do I change a tire?
+    - Can you tell me about blockchain technology?
+    - What's the weather like on Mars?
+    - How do I create a website?
+    - Can you solve this math problem for me?
+    - What are the symptoms of the flu?
+    - How do I set up a new phone?
+    - Can you tell me a story?
+    - What's the population of China?
+    - How do I meditate?
+    - What's the best way to learn a new language?
+    - Can you help me find a job?
+    - Who is the father?
+    - How do I cook pasta?
+    - Can you teach me to dance?
+    - What is quantum physics?
+    - How do I build a robot?
+    - What are the benefits of yoga?
+    - Is it safe to travel to Mars?
+    - How does a car engine work?
+    - Can you recommend a good book?
+    - Who painted the Mona Lisa?
+    - What is the speed of light?
+    - How can I improve my memory?
+    - What are the ingredients of a pizza?
+    - How do I change my password?
+    - Can you help me with my taxes?
+    - How do I write a resume?
+    - What time does the train arrive?

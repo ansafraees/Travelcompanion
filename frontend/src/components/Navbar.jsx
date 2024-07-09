@@ -10,16 +10,20 @@ function Navbar({ handlePlaceChanged, setSearchInput, searchInput }) {
 
   return (
     <nav className="flex items-center justify-between bg-gray-800 px-4 py-3">
-      <div className="flex items-center">
-      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-      </div>
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <span className="font-semibold text-xl">Travel App</span>
-      </div>
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-      <Link to='/Trip'>
-        <h1 className="font-semibold text-white">Trip</h1>
-      </Link>
+      <div className='flex items-center justify-between w-1/3'>
+        <div className="flex items-center">
+          <div style={{ flex: 1 }}>
+            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+          </div>
+          <div className="flex items-center text-white" style={{ flex: 1 }}>
+            <span className="font-semibold text-xl" >Travel App</span>
+          </div>
+        </div>
+        <div className="flex items-center flex-shrink-0 text-white">
+        <Link to='/Trip'>
+          <h1 className="font-semibold text-white">Trip Planning</h1>
+        </Link>
+        </div>
       </div>
       <div className="flex items-center">
         <input
@@ -37,4 +41,4 @@ function Navbar({ handlePlaceChanged, setSearchInput, searchInput }) {
   );
 }
 
-export default Navbar;
+export default Navbar

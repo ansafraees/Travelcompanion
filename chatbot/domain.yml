@@ -17,7 +17,7 @@ intents:
   - glad
   - ask_weather
   - ask_restaurant
-  - invalid_input
+  - out_of_scope
   - ask_attraction
   - ask_hotel
 

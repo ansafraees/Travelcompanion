@@ -78,7 +78,7 @@ export const generateDayItinerary = (sortedRestaurants, sortedAttractions) => {
 export const weekItinerary = (sortedWeekAttractions, sortedRestaurants) => {
     
     const weekItinerary = {};
-    for (let i = 0; i < sortedWeekAttractions.length; i++) {
+    for (let i = 0; i < sortedWeekAttractions.length-1; i++) {
         const dailyAttractions = sortedWeekAttractions.slice(i * 1, i * 1 + 1);
         const dailyRestaurants = sortedRestaurants.slice(i * 3, i * 3 + 3);
         weekItinerary[i] = generateDayItinerary(dailyRestaurants, dailyAttractions[0]);

@@ -98,17 +98,17 @@ else{
       justifyContent: 'center',
       alignItems: 'center',
       minHeight: '100vh', 
-    }} className='bg-gradient-to-r from-indigo-500 h-screen w-screen'>
-      <div style={{
-        backgroundColor: 'white',
+    }} className='bg-slate-900 h-screen w-screen'>
+      <div className="w-10/12 bg-gray-700 flex flex-row flex-wrap justify-center items-center" style={{
+
         padding: '20px',
         borderRadius: '10px',
-        boxShadow: '0px 10px 20px rgba(0,0,0,0.19), 0px 6px 6px rgba(0,0,0,0.23)', overflow: 'auto',maxHeight: '90vh',minWidth:'85vh'
+        boxShadow: '0px 10px 20px rgba(0,0,0,0.19), 0px 6px 6px rgba(0,0,0,0.23)', overflow: 'auto',maxHeight: '90vh'
       }}>
         {type === 'day' ? (
-      <div style={{ display: 'flex', flexDirection: 'column', width:'85vh', alignContent:"center",justifyContent:'center'}}>
+      <div style={{ display: 'flex', flexDirection: 'column', width:'125vh', alignContent:"center",justifyContent:'center'}}>
         <div style={{marginBottom:10}}>
-          <Typography gutterBottom variant="h2">A Day's Itinerary</Typography>
+          <Typography className="text-white"gutterBottom variant="h2">A Day's Itinerary</Typography>
           {Object.entries(itinerary).map(([time, details]) => (
             <div key={time}>
               <TripCard time={time} details={details} />
